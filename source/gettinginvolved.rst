@@ -396,6 +396,7 @@ looks like this::
     Preferences
         Profiles
             Add preselection to the profile tab
+            Add filter to font selector to only show fixed width fonts
         Layouts
             Have changing widgets depending on what is selected in the tree
             Terminal title editable
