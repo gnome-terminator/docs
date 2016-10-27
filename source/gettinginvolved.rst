@@ -60,8 +60,11 @@ previously, but never thought to note them)
 - `MindMaze`_ - VR / mind-reading.
     Visible in the background of the video, and in an image lower down
     the page. (The Verge)
+- `Dual Universe`_ - Sci-Fi MMORPG
+    Visible at 17:40 of the pitch video. (KickStarter)
 
 .. _MindMaze: http://www.theverge.com/2015/3/3/8136405/mind-maze-mind-leap-thought-reading-virtual-reality-headset
+.. _Dual Universe: https://www.kickstarter.com/projects/1949863330/dual-universe-civilization-building-sci-fi-mmorpg
 
 -----------------------------
 Manual updates
