@@ -1,3 +1,7 @@
+.. warning:: This manual is transitional, and is not updated yet for the GTK3
+             version of Terminator. Due to this the images might look slightly
+             different, and there might be some items that are not 100% accurate.
+
 .. image:: imgs/icon_terminator.png
    :align: right
    :alt: The robot future of terminals.
