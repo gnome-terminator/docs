@@ -1,7 +1,3 @@
-.. warning:: This manual is transitional, and is not updated yet for the GTK3
-             version of Terminator. Due to this the images might look slightly
-             different, and there might be some items that are not 100% accurate.
-
 .. image:: imgs/icon_terminator.png
    :align: right
    :alt: The robot future of terminals.
@@ -10,9 +6,9 @@
 Welcome to Terminator's documentation!
 ======================================
 
-This is the beginnings of a manual for Terminator. Sometimes it is not always
+Sometimes it is not always
 clear just how many little shortcuts and features there are in Terminator. This
-guide hopes to reduce the confusion.
+manual hopes to reduce the confusion.
 
 A quick word on style. I have none. 😃 I have an casual way of talking and writing,
 and a strange sense of humour. I also tend to use random pop-culture references
@@ -32,12 +28,13 @@ Take a look at the following list:
    .. image:: imgs/small_example.png
       :width: 100%
 
-- Arrange terminals in a grid
+- Arrange terminals in a grid-like structure
 - Tabs
 - Drag and drop re-ordering of terminals
 - Lots of keyboard shortcuts
 - Save multiple layouts and profiles via GUI preferences editor
 - Simultaneous typing to arbitrary groups of terminals
+- Extensible through plugins
 
 and lots more...
 

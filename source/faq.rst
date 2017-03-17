@@ -6,7 +6,7 @@
 Frequently Asked Questions
 ==========================
 
-Here I'll try to list some common questions that get asked for.
+Here I'll try to list some common questions that get asked.
 
 ------
 Why...

@@ -19,6 +19,8 @@ Global
 ------
 
 .. image:: imgs/prefs_global.png
+   :scale: 100%
+   :align: center
 
 These settings are defaults, but some of them can be overridden by a
 options on the command-line, or within a layout. A number will also
@@ -41,20 +43,21 @@ Behaviour
 
   **Always on top** (default: off)
 
-    Window attempts to remain on top.
+    New windows attempt to remain on top, until deactivated in the window
+    menu.
 
   **Show on all workspaces** (default: off)
 
-    The focused window will follow if you switch to a different virtual
-    desktop.
+    New windows will follow if you switch to a different virtual desktop,
+    until deactivated in the window menu.
 
   **Hide on lose focus** (default: off)
 
     This is a quake console like feature, where the user want the window to
     vanish when clicking elsewhere.
 
-    This is rather buggy at the moment as it is very easy for the main
-    window to lose focus and disappear.
+    .. warning:: This is rather buggy at the moment as it is very easy for
+                 the main window to lose focus and disappear.
 
   **Hide from taskbar** (default: off)
 
@@ -72,7 +75,9 @@ Behaviour
                  **off** will usually fix the issue. It is not clear
                  why, but it seems Terminator and the window manager
                  get into an argument over what size the window should
-                 be.
+                 be. Frankly this feature causes more trouble than it's
+                 worth. Don't be surprised if it gets removed at some
+                 point.
 
   **DBus server** (default: on)
 
@@ -108,9 +113,13 @@ Behaviour
 
     If enabled and there is no selection, the shortcut is allowed to
     pass through. This is useful for overloading ``Ctrl``\ +\ ``C``
-    to copy a selection, or send the SIGINT to the current process if
-    there is no selection. If not enabled the shortcut does not pass
+    to either copy a selection, or send the SIGINT to the current process
+    if there is no selection. If not enabled the shortcut does not pass
     through at all, and the SIGINT does not get sent.
+
+    .. note:: For newbies SIGINT is the keyboard interrupt signal that
+              will interrupt the program running in the foreground of a
+              terminal.
 
   **Re-use profiles for new terminals** (default: off)
 
@@ -123,7 +132,8 @@ Behaviour
     If this is enabled then ``Ctrl``\ +\ ``click`` on a URL will try to use
     the command defined in *Custom URL handler* to open the link. If not
     enabled, Terminator will attempt to open the link with its internal
-    logic.
+    logic. In order this attempts to open the URL using GTK, xdg-open,
+    and lastly pythons internal web browser support.
 
   **Custom URL handler** (default: inactive, empty)
 
@@ -135,20 +145,35 @@ Behaviour
 Appearance
 ^^^^^^^^^^
 
+  **Extra Styling (Theme dependant)** (default: on)
+
+    For themes we have the option to include some additional CSS code
+    to make the window a bit prettier. For example under the Ubuntu
+    Ambiance theme GNOME Terminal has custom tabs. In line with our
+    unofficial policy of following gnome-terminal, I have replicated
+    that customisation for Terminator. Some may prefer to use the
+    unadulterated standard tabs, so using this option the extra styling
+    can be turned off.
+
   **Terminator seperator size** (default: -1)
 
-    This is the width in pixels, and can range from -1 to 5. The value
+    This is the width in pixels, and can range from -1 to 20. The value
     of -1 will take the default size from the system theme.
 
-  **Unfocused terminal font brightness** (default: 0.8)
+    .. note:: Making this too small will make grabbing the splitters
+              quite difficult, as we remove the oversized splitter
+              handles some themes provide because it interferes with
+              mouse selection of text.
+
+  **Unfocused terminal font brightness** (default: 80%)
 
     Terminals that do not currently have the focus will can be dimmed
-    to aid focus. The value can range from 0 (invisible) to 1 (full
+    to aid focus. The value can range from 0% (invisible) to 100% (full
     brightness)
 
   **Window borders** (default: on)
 
-    The window manager frame can be removed from your windows.
+    The window manager frame is removed from your windows.
 
   **Tab position** (default: Top)
 
@@ -160,14 +185,30 @@ Appearance
     - *Right*
     - *Hidden* - Tabs still work, you just can't see them.
 
+  
   **Tabs homogeneous** (default: on)
 
-    Tabs will have equal widths
+    .. warning:: This option was removed during the port to GTK 3,
+                 and has no effect, apart from giving access to the
+                 *Tab scroll buttons* option.
+
+                 It used to give the choice between tabs of uniform
+                 and non-uniform width.
+
 
   **Tabs scroll buttons** (default: off)
 
     When there are more tabs than can fit within the window buttons will
     be drawn for moving left and right.
+
+    .. warning:: If the tab scroll buttons are turned off and you open
+                 an extreme number of tabs in a single window, an
+                 undesireable behaviour occurs. Once the tabs reduce to
+                 the minimum possible size the window is forced wider to
+                 accomodate additional tabs. It is not immediately
+                 obvious as to what the correct response is in this
+                 situation.
+
 
 ^^^^^^^^^^^^^^^^^
 Terminal Titlebar
@@ -201,16 +242,6 @@ Terminal Titlebar
 
     If active and set, then the custom font to be used in the titlebar.
 
-  .. warning:: With newer versions of some of the underlying libraries,
-               using a bitmap font can cause the Preference window to
-               crash. If you find this happening, you will need to
-               either remove the configuration from the Terminator
-               :ref:`configuration file <config-file>` or you will
-               need to change your system settings. Please see
-               `LP#1294699`_ for more information.
-
-.. _LP#1294699: https://bugs.launchpad.net/bugs/1294699
-
 .. _prefs-profiles:
 
 --------
@@ -219,22 +250,23 @@ Profiles
 
 You should already be familiar with the sub-tabs from GNOME Terminal,
 and Terminator's are modelled on those available in GNOME Terminal where
-it makes sense, and give much of the same functionality. Bear in mind that
-some of these differences are due to changes in the underlying VTE
-widget between GTK2 and GTK3.
+it makes sense, and give much of the same functionality.
 
 Below we will go through each pane, and highlight and explain differences
-between Terminator with GTK2 and GNOME Terminal with GTK3.
+between Terminator and GNOME Terminal.
 
 ^^^^^^^
 General
 ^^^^^^^
 
 .. image:: imgs/prefs_profiles_general.png
+   :scale: 100%
+   :align: center
 
 One key difference is that we have a sidebar to the left listing the
-available Profiles, as opposed to GNOME Terminator, where the list is
-a separate window launched from the menu bar.
+available Profiles, as opposed to GNOME Terminal, where the list is
+a separate window launched from the menu bar. This also means a few of
+the widgets, like the profile name, are not needed.
 
 **Use the system fixed width font** (default: on)
 
@@ -245,22 +277,9 @@ a separate window launched from the menu bar.
 
   If active and set, then the custom font to be used in the terminal.
 
-.. warning:: With newer versions of some of the underlying libraries,
-             using a bitmap font can cause the Preference window to
-             crash. If you find this happening, you will need to
-             either remove the configuration from the Terminator
-             :ref:`configuration file <config-file>` or you will
-             need to change your system settings. Please see
-             `LP#1294699`_ for more information.
-
 **Allow bold text** (default: on)
 
   Allows you to disable the use of bold fonts in the terminal.
-
-**Anti-alias text** (default: on) †*Not in GNOME Terminal*
-
-  In Terminator you can turn the font smoothing off. This is no
-  longer possible in GNOME Terminator.
 
 **Show titlebar** (default: on)
 
@@ -271,7 +290,14 @@ a separate window launched from the menu bar.
   This puts the selection into the copy/paste buffer, as well as being
   available on middle-click.
 
-**Select-by-word characters** (default: ``-A-Za-z0-9,./?%&#:_``)
+**Rewrap on resize** (default: on)
+
+  This will cause longer lines to rewrap when a terminals width changes.
+
+  .. note:: Larger or infinite scrollback buffers may become slow when
+            this option is enabled. 
+
+**Select-by-word characters** (default: ``-,./?%&#:_``)
 
   Using ``double-click`` to select text will use this pattern to define
   what characters are considered part of the word.
@@ -288,9 +314,19 @@ Cursor
     - *Underline* - Single pixel tall horizontal line.
     - *I-Beam* - Single pixel wide vertical line.
 
-  **Colour** (default: #AAAAAA)
+  **Colour** (default: Foreground)
 
-    The colour of the cursor.
+    The colour of the cursor. A radio option of Foreground will use
+    whatever the foreground is defined as for regular text, as set
+    in the Colours tab. Alternatively a custom colour can be chosen
+    using the colour swatch.
+
+    .. note:: Foreground uses xor'ing so the text under the cursor is
+              always clear. Xor'ing is not used with a custom colour.
+              This means that if the colour of the character under the
+              cursor is similar to the colour chosen, then it can be
+              difficult to discern what that character is. The following
+              option can help with this.
 
   **Blink** (default: on)
 
@@ -326,9 +362,14 @@ Not in Terminator
 
     Our profiles names are in the sidebar to the left.
 
+  **Profile ID**
+
+    Ummm... OK, I have no idea what GNOME Terminal uses this for.
+
   **Show menubar by default in new terminals**
 
-    Terminator doesn't use a traditional menu bar.
+    Terminator doesn't use a traditional menu bar. This has been removed
+    in new versions of GNOME Terminal.
 
   **Terminal bell**
 
@@ -336,7 +377,7 @@ Not in Terminator
     own grouping. This item in GNOME Terminal is the same as *Audible
     beep* defined above.
 
-  **Use custom default terminal size**
+  **Initial terminal size**
 
     Terminator handles window sizes within :ref:`Layouts <layouts>`,
     or with :ref:`command-line-options`.
@@ -346,14 +387,12 @@ Command
 ^^^^^^^
 
 .. image:: imgs/prefs_profiles_command.png
+   :scale: 100%
+   :align: center
 
 **Run commands as a login shell** (default: off)
 
   Force the command to run as a login shell.
-
-**Update login records when command is launched** (default: on)
-
-  Updates login records when a new shell is opened.
 
 **Run a custom command instead of my shell** (default: off)
 
@@ -371,6 +410,19 @@ Command
             be worked around by using the shell line seperator ``;``
             and a following ``bash`` command.
 
+  .. warning:: Running a non-bash program as a command *can* lead to
+               unexpected results. Some programs behaviour depends on
+               having a full, interactive shell underlying the program.
+               An expample would be ``mutt``. Run standalone, at startup
+               it will begin with all threads expanded. Using::
+
+                 bash -c mutt
+
+               will also not work, as this is a non-interactive session.
+               Instead make the session interactive with::
+
+                 bash -ic mutt
+
 **When command exits** (default: Exit the terminal)
 
   When the running command exits (default or custom) what action
@@ -386,24 +438,14 @@ Command
                is broken and exits immediately, then you can end up
                in a resource hungry loop.
 
-"""""""""""""""""
-Not in Terminator
-"""""""""""""""""
-
-  **Initial title**
-
-    Terminator handles window title within :ref:`Layouts <layouts>`,
-    or with :ref:`command-line-options`.
-
-  **When terminal commands set their own titles**
-
-    Terminator doesn't have this setting.
 
 ^^^^^^^
 Colours
 ^^^^^^^
 
 .. image:: imgs/prefs_profiles_colors.png
+   :scale: 100%
+   :align: center
 
 There seems to be some mild quirks and differences (palettes available
 or selected from the system theme) between Terminator and GNOME
@@ -415,19 +457,18 @@ Foreground and Background
 
   **Use colours from system theme** (default: off)
 
-    Use colours as defined in the system theme. Not clear at this time
-    where exactly these come from. Differences in the GTK2, GTK3 and
-    GNOME Terminal.
+    Use colours as defined in the system theme. These are requested
+    from the underlying VTE widget.
 
   **Built-in schemes** (default: Grey on black)
 
     Pick a primary colour combination for foreground and background.
-    Again there are unexplained differences between Terminator and
-    GNOME Terminal.
+    Again there are differences between Terminator and GNOME Terminal.
 
-    The list seems to be dynamic and vary depending on the system,
-    with the addition of *Custom* which allows setting the colours
-    as desired.
+    The list for GNOME Terminal seems to be dynamic and vary depending
+    on the system, with the addition of *Custom* which allows setting
+    the colours as desired. Terminator has a number of schemes hard
+    coded. (This may see improvement at some point.)
 
   **Text colour** (default: inactive, #AAAAAA)
 
@@ -445,11 +486,9 @@ Palette
 
   **Built-in schemes** (default: Ambience)
 
-    A predefined colour palette can be selected. Again there are
-    unexplained differences between Terminator and GNOME Terminal.
-
-    The default here may be system dependant, with Ambience being
-    an Ubuntu colour scheme.
+    A predefined colour palette can be selected. The same text applies
+    as used for the *Built in schemes* option under *Foreground and
+    Background* .
 
   **Colour palette** (default: inactive)
 
@@ -472,31 +511,26 @@ Not in Terminator
     user can force bold to be drawn in the same colour as the
     foreground text.
 
+  **Use transparent background**
+
+    Our transparency has a tab all to itself.
+
+  **Use transparency from system theme**
+
+    Not sure which setting GNOME Terminal gets this from.
+
 ^^^^^^^^^^
 Background
 ^^^^^^^^^^
 
 .. image:: imgs/prefs_profiles_background.png
+   :scale: 100%
+   :align: center
 
 **Solid colour** (default: active)
 
   Background of terminal is set to the solid colour set in previous
   *Colours* tab.
-
-**Background image** (default: inactive)
-
-  Background will be an image. There is no scaling done.
-
-**Image file** (default: inactive, None)
-
-  If *Background image* is set, then the image to use can be selected
-  here.
-
-**Background image scrolls** (default: inactive, on)
-
-  If the *Background image* is set, then setting this to on will cause
-  the background image to change as the window moves. This is a for of
-  fake transparency.
 
 **Transparent background** (default: inactive)
 
@@ -505,16 +539,18 @@ Background
 
   .. note:: This option requires a compositing desktop.
 
-**Shade transparent or image background** (default: 0.5)
+**Shade transparent background** (default: 0.5)
 
-  For *Background image* and *Transparent background* this is how
-  much the solid colour should be blended in, giving a tinting effect.
+  For *Transparent background* this is how much the solid colour should
+  be blended in, giving a tinting effect.
 
 ^^^^^^^^^
 Scrolling
 ^^^^^^^^^
 
 .. image:: imgs/prefs_profiles_scrolling.png
+   :scale: 100%
+   :align: center
 
 **Scrollbar is** (default: On the right side)
 
@@ -524,9 +560,13 @@ Scrolling
   - *On the right side*
   - *Disabled*
 
-**Scrollback** (default: 500 lines)
+**Scroll on output** (default: on)
 
-  How many lines to keep before discarding.
+  Moves terminal to end of scrollback buffer when any output occurs.
+
+**Scroll on keystroke** (default: on)
+
+  Moves terminal to end of scrollback buffer when any keypress occurs.
 
 **Infinite Scrollback** (default: off)
 
@@ -537,23 +577,17 @@ Scrolling
             component, so even after a long time, the memory footprint
             and performance of Terminator should be OK.
 
-**Scroll on output** (default: on)
+**Scrollback** (default: 500 lines)
 
-  Moves terminal to end of scrollback buffer when any output occurs.
-
-**Scroll on keystroke** (default: on)
-
-  Moves terminal to end of scrollback buffer when any keypress occurs.
-
-**Use keystrokes to scroll on alternate screen** (default: on)
-
-  Ummmm... I don't know. Alternate screens are a bit of a mystery to me.
+  How many lines to keep before discarding.
 
 ^^^^^^^^^^^^^
 Compatibility
 ^^^^^^^^^^^^^
 
 .. image:: imgs/prefs_profiles_compatability.png
+   :scale: 100%
+   :align: center
 
 **Backspace key generates** (default: ASCII DEL)
 
@@ -573,18 +607,22 @@ Compatibility
   - *ASCII DEL*
   - *Escape sequence*
 
-**Reset Compatibility Options to Defaults**
-
-  Sets the two previous items back to their defaults.
-
-"""""""""""""""""""""""
-Encoding
-"""""""""""""""""""""""
-
-**Default** (default: Unicode UTF-8)
+**Encoding** (default: Unicode UTF-8)
 
   Choose the default encoding method used from a long list of
   available encodings.
+
+**Reset Compatibility Options to Defaults**
+
+  Sets the previous items back to their defaults.
+
+"""""""""""""""""""""""""""""""""""""""
+Not in Terminator
+"""""""""""""""""""""""""""""""""""""""
+
+**Ambiguous-width characters**
+
+  Not really too sure what this does.
 
 .. _prefs-layouts:
 
@@ -593,13 +631,15 @@ Layouts
 -------
 
 .. image:: imgs/prefs_layouts.png
+   :scale: 100%
+   :align: center
 
 Layouts are the primary means for saving collections of windows,
 tabs, and terminals. The use and flexibility of layouts is covered in
 :ref:`layouts`. Here we will cover the bare minimum to understand the
 configuration options.
 
-In the left list is the saved layouts, with three buttons below:
+In the list to the left is the saved layouts, with three buttons below:
 
 - *Add* - Creates a new layout from the current windows, tabs and
   terminals, and saves them with a new name.
@@ -607,19 +647,21 @@ In the left list is the saved layouts, with three buttons below:
 - *Save* - Update the selected layout with the current windows, tabs,
   and terminals.
 
-Once a layout is highlighted, it's name can be changed by clicking it
+  .. warning:: You do not need to use the save button when changing the
+               options in the controls on the right.
+
+               If you do, you *will* lose the *Custom command* and
+               *Working directory* settings for all terminals in this
+               layout. It will also replace the *saved* layout with
+               the *current* layout. This means your windows may now be
+               the wrong size, or in the wrong position.
+
+Once a layout is highlighted, its name can be changed by clicking it
 again.
 
 In the central list is a tree showing the structure of the selected
 layout. When highlighting an entry of type Terminal, the controls on
 the right become enabled, and can be changed.
-
-.. warning:: You do not need to use the save button when changing the
-             options in the controls on the right.
-             
-             If you do, you *will* lose the *Custom command* and
-             *Working directory* settings for all terminals in this
-             layout.
 
 **Profile**
 
@@ -633,10 +675,23 @@ the right become enabled, and can be changed.
   in the profile, or the default user shell.
   
   .. note:: If you place an entry here note that there is no ``bash`` or
-            other shell underneath it. When the command ends, there
-            is no chance to drop to a shell or other program. This can
-            be worked around by using the shell line seperator ``;``
-            and a following ``bash`` command.
+            other shell underneath it.
+
+            If your application needs a shell (i.e. mutt misbehaves if
+            run without bash) then run your command inside a ``bash``
+            session with:
+
+            ``bash -ic <command>``
+
+            When the command ends, there is no chance to drop to a shell
+            or other program. This can be worked around by using the
+            shell line seperator ``;`` and a following ``bash`` command:
+
+            ``bash -ic <command>; bash``
+
+            However, note that the second bash will have no connection
+            to the details of the bash the command ran under. This means
+            no environment variables, or return codes are carried over.
 
 **Working directory**
 
@@ -650,6 +705,8 @@ Keybindings
 -----------
 
 .. image:: imgs/prefs_keybindings.png
+   :scale: 100%
+   :align: center
 
 This is a list of all available keyboard shortcuts in the application.
 
@@ -667,24 +724,22 @@ Plugins
 -------
 
 .. image:: imgs/prefs_plugins.png
+   :scale: 100%
+   :align: center
 
 Here you will find a list of available plugins, and whether they are
 enabled or not. Plugins are covered in more detail in :ref:`plugins`.
-
-.. warning:: For some reason clicking on the text label of a plugin
-             does not just select the item, but actually toggles the
-             active/inactive status. This does not happen in the
-             experimental GTK3 version of Terminator, and is a bit of
-             a mystery.
 
 -----
 About
 -----
 
 .. image:: imgs/prefs_about.png
+   :scale: 100%
+   :align: center
 
 A simple panel describing a bit about the application, and a set of
 links that will guide users to some helpful Terminator project
 resources. There's also a mysterious button... I wonder what happens
-when I press it?
+when I press it?...
 

@@ -21,6 +21,8 @@ When you first start Terminator you will get a default, minimal window,
 looking something like the following:
 
 .. image:: imgs/basic_window.png
+   :scale: 100%
+   :align: center
 
 There may be some cosmetic differences, but it should look fairly
 similar. It may in fact look a little too minimal to some of you, but
@@ -35,6 +37,8 @@ completely abandoned. Lets look again at the basic interface, but with
 the two primary menus showing:
 
 .. image:: imgs/window_breakdown.png
+   :scale: 100%
+   :align: center
 
 .. note:: You will never see a window that looks like this, as it is
           impossible to have both menus up at the same time.
@@ -81,6 +85,15 @@ impractical. Here's a window that is split Horizontally, Vertically, and
 Horizontally again:
 
 .. image:: imgs/split_window.png
+   :scale: 100%
+   :align: center
+
+.. note:: People sometimes raise the ambiguity of the terminology used,
+          and disagree as to which way round Horizontal and Vertical are
+          used. It has been the way it is for a very long time. Changing
+          it now will just confuse existing users, so I won't be changing
+          it. Besides, I happen to agree with the way round it is. So deal
+          with it. 😎
 
 Between the terminals you can see a space that is a splitter grab handle.
 You can grab these and drag them, and the terminals will resize. In this
@@ -114,7 +127,7 @@ original layout, and restore the font size if necessary.
 
 .. warning:: An outstanding issue is that sometimes the font size
              selected when zooming in can be a bit extreme. You can use
-             ``Ctrl``\ +\ ``wheelup``\ /\ ``wheeldown`` to increase and
+             :ref:`Terminal zooming <zooming-the-terminal>` to increase and
              decrease the font size if this happens. This will not
              affect the restored font size.
 
@@ -169,10 +182,12 @@ Click-able items
 
 
 .. image:: imgs/plugins_links.png
+   :scale: 100%
+   :align: center
 
 Terminator can make strings of text that match a pattern click-able.
 The user can perform two additional actions on these when the mouse
-pointer hovers overs the item:
+pointer hovers over a matched item:
 
 - ``Ctrl``\ +\ ``click``
     Will try to open the item in a suitable
@@ -263,6 +278,8 @@ So, by now you've probably made a few splits and used the mouse to drag them
 about, and you now have something resembling the following, minus the highlights:
 
 .. image:: imgs/rebalance_01.png
+   :scale: 100%
+   :align: center
 
 Terminator lets us *rebalance* the terminals, equally dividing the available
 space between the *siblings*.
@@ -274,10 +291,14 @@ the splitter, the space will be divided evenly between the siblings. So,
 double-clicking any of the blue splitters will give:
 
 .. image:: imgs/rebalance_02.png
+   :scale: 100%
+   :align: center
 
 If instead we ``double-click`` on the green splitter, we get:
 
 .. image:: imgs/rebalance_03.png
+   :scale: 100%
+   :align: center
 
 But there's more! We can use two modifier keys to rebalance more collections of
 siblings. ``Shift``\ +\ ``double-click`` the splitter and all children,
@@ -289,14 +310,20 @@ will be rebalanced. It will not affect terminals in other windows or tabs.
 ``Shift``\ +\ ``double-click`` on green:
 
 .. image:: imgs/rebalance_04.png
+   :scale: 100%
+   :align: center
 
 ``Super``\ +\ ``double-click`` on green:
 
 .. image:: imgs/rebalance_05.png
+   :scale: 100%
+   :align: center
 
 ``Shift``\ +\ ``Super``\ +\ ``double-click`` on green:
 
 .. image:: imgs/rebalance_06.png
+   :scale: 100%
+   :align: center
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Dragging and dropping a terminal
@@ -308,6 +335,8 @@ window. The simplest is to use the titlebar at the top of each terminal. Simply
 the dragged terminal to move it:
 
 .. image:: imgs/dragterminal_01.png
+   :scale: 100%
+   :align: center
 
 Here you can see a preview of the dragged terminal - scaled if large - and shading
 to show which area it will cover, which can be the top, bottom, left or right of
@@ -316,6 +345,8 @@ an existing terminal.
 The above action results in the following:
 
 .. image:: imgs/dragterminal_02.png
+   :scale: 100%
+   :align: center
 
 The other way to drag a terminal can be done from within the terminal with
 ``Ctrl``\ +\ ``right-click-drag``\ . With this method once you start the
@@ -331,7 +362,9 @@ of the same process*. By default all windows will be part of the same process.
 Windows will not be part of the same process if you deliberately turn off
 the :ref:`DBus` interface with the :ref:`Preferences <preferences>` or the
 :ref:`command-line-options` when starting Terminator up. :ref:`Layouts <layouts>`
-are also currently isolated at a process level for technical reasons.
+are also currently isolated at a process level for technical reasons. - **Needs
+to be double checked and confirmed.Since the work that got layouts working
+over DBus, this may now be wrong.**
 
 .. _layout-shortcuts:
 
@@ -453,15 +486,19 @@ a limitation that the found string is not highlighted.
 Resulting in a search bar at the bottom of the focused terminal:
 
 .. image:: imgs/search.png
+   :scale: 100%
+   :align: center
 
 This has buttons for moving back and forward through the results, as
 well as an option to wrap the search around.
+
+.. _zooming-the-terminal:
 
 -----------------------------------
 Zooming the terminal
 -----------------------------------
 
-As mentioned above it is possible to zoom into and out of a terminal.
+It is possible to zoom into and out of a terminal.
 There are also some modifiers to zoom more than just the current
 terminal.
 

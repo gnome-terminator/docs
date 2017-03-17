@@ -82,11 +82,11 @@ till further notice this manual will remain in this format.
 
 If you're feeling like a loquacious polyglot you could attempt to
 translate the whole manual. So far I haven't tested it, but in
-principle, just do a checkout of the trunk, and do a full copy of
-the ``doc/manual`` folder to ``doc/manual_XXXX`` where XXXX is the
-i18n language code. This is usually just the two or three letters of
-the language code, but sometimes has the region too... Or something
-else entirely in a couple of cases.  A couple of examples::
+principle, just do an export of the manual-gtk3 branch in Launchpad
+to a folder ``manual-gtk3-<LANG>``, where ``<LANG>`` is the i18n
+language code. This is usually just the two or three letters of the
+language code, but sometimes has the region too... Or something else
+entirely in a couple of cases.  A couple of examples::
 
   pt            - Portugese
   pt_BR         - Brazilian Portugese
@@ -97,43 +97,37 @@ Then just translate away, and take new screen grabs to replace the
 British English ones I've done. If someone was to make a serious
 effort to translate the manual, I'm sure we can get it included.
 
-The Help shortcut checks the LANGUAGE environment variable, and tries
-those folders in order, before falling back gracefully to the default
-manual, which is British English anyway::
-
-  LANGUAGE=en_GB:en
-
-So this is going to try:
-
-+ *html_en_GB* - the non-existent British English folder
-+ *html_en* - the non-existent generic English folder
-+ *html* - the default document that happens to be in British English
-
-.. note:: Although the source is in a folder beginning with ``manual``,
-          that gets replaced with ``html`` for installation.
-
 .. note:: If there are any Americans offended by correct spelling,
           they are more than welcome to create an Americanised
           version, and I'll relegate it to the en_US folder. The
           default will remain British English.
 
-In order to create the html for the manual, you must have the
-sphinx_rtd_theme package installed. This does not appear to be
-packaged for Ubuntu 14.04 LTS as far as I can tell. This means you
-must install it using the pip tool. This may need installing on your
-system too with::
+As there is only one language available, the Help shortcut will by
+default open::
 
-    sudo apt-get install python-pip
+    http://terminator-gtk3.readthedocs.io/en/latest/index.html
 
-Once that is installed you can install the theme with::
+The specifics of how readthedocs.io handle multiple languages are still
+a little hazy, but as I understand it uses the http headers passed by
+your browser, and directs you to the appropriate URL, for example::
 
-    sudo pip install sphinx-rtd-theme
+    http://terminator-gtk3.readthedocs.io/de/latest/index.html
 
-This will take care of installing the theme and it's dependencies.
+In order to build the html for the manual, you must have sphinx and the
+sphinx_rtd_theme package installed. Ideally you will be using a distro
+with these packages available. An example would be Ubuntu 16.04 LTS::
 
-.. warning:: On Ubuntu this also installed a newer version of *Sphinx*
-             under the ``/usr/local`` folder. This caused a bit of
-             confusion at one point, so be aware.
+    sudo apt-get install python-sphinx python-sphinx-rtd-theme
+
+This will take care of installing sphinx, the theme and it's dependencies.
+
+Once a manual has a reasonable amount of translation we can look into
+adding it to the readthedocs.io website so it integrates properly.
+
+.. warning:: This section may need updating if we do reach the point of
+             adding another manual. It is at this point we will have to
+             figure out the details of adding the translated manuals,
+             and getting the user to the correct document.
 
 -----------------------------
 Testing
@@ -190,6 +184,8 @@ handle bugs. So, with that in mind, let me present my idea of how a
 bug should be handled. First a pretty picture:
 
 .. image:: imgs/launchpad_bugflow.png
+   :scale: 100%
+   :align: center
 
 So, the darker blue states are the ones available in Launchpad that
 can be manually set. The two marked with a red outline require bug
@@ -275,7 +271,12 @@ Again there is a new official tag *no-action*. These will then be put
 in one of the following: *Invalid*, *Fix Committed*, or *Fix Released*,
 depending on circumstance.
 
-Our last Resolved state is the automatically set **Expired** one.
+Our last Resolved state is the automatically set **Expired** one. This
+can only be set by Launchpad when a bug is set to *Incomplete*, and has
+been idle for 60 days. This is actually an on/off feature that is set by
+the project, and applies project-wide. Currently this is not active for
+Terminator bugs, but one day (when I get caught up, ha!) I might choose
+to turn this on.
 
 Available
 ~~~~~~~~~
@@ -307,7 +308,7 @@ Oh come on... Coding? Again!
 I see lots of people say how Terminator is really good, and it is,
 but like anything, it could be better!
 
-To give an idea, as of October 2015, revision 1663, there are 86
+To give an idea, as of March 2017, revision 1760, there are around 100
 `wishlist items`_.
 
 .. note:: Just because an item is marked as wishlist, it doesn't
@@ -321,7 +322,7 @@ To give an idea, as of October 2015, revision 1663, there are 86
           merged.
 
 Some of these wishlist items are also in my own text file of "Things
-to do" / "Big bag of crazy", which as of October 2015, revision 1663,
+to do" / "Big bag of crazy", which as of March 2017, revision 1760,
 looks like this::
 
     Enhancements which may or may not have a wishlist item
@@ -339,6 +340,8 @@ looks like this::
         Triggers (actions) based on regex for received text
         A "swap" mode for drag and drop
         Encrypted dumping/logging to disk
+        Remotinator commands to modify debug level / class / funcs, and switch trace on/off
+        Allow custom commands to only show on particular profiles
 
     Search
         Might be able to missuse the ClusTerm method of overwriting to "highlight" (gtk2 only)
@@ -371,7 +374,7 @@ looks like this::
             Context menu (in addition to Windows menu button - not always available on all keyboards)
             Group menu
             Open preferences
-            Change tab text (#1054300-patch), titlebar text, group name
+            Change group name
             Toggle titlebar visibility
             Equalise the splitters (siblings/siblings+children/siblings+parents,all)
             Zoom +receiver in/out/reset
@@ -384,7 +387,7 @@ looks like this::
             Broadcast temporarily off when maximised or zoomed to single term (toggle)
 
     Titlebar
-        Add large action/status icons for when titlebar is bigger.
+        Add large action/status icons for when titlebar is bigger and/or HiPDI
         Improve the look/spacing of the titlebar, i.e. the spacing around/between elements
 
     Tabs
@@ -452,6 +455,16 @@ ideas if you are trying to find small starter tasks.
 .. _wishlist items: https://bugs.launchpad.net/terminator/+bugs?field.searchtext=&orderby=-importance&search=Search&field.status%3Alist=NEW&field.status%3Alist=CONFIRMED&field.status%3Alist=TRIAGED&field.status%3Alist=INPROGRESS&field.status%3Alist=INCOMPLETE_WITH_RESPONSE&field.status%3Alist=INCOMPLETE_WITHOUT_RESPONSE&field.importance%3Alist=WISHLIST&assignee_option=any&field.assignee=&field.bug_reporter=&field.bug_commenter=&field.subscriber=&field.structural_subscriber=&field.tag=&field.tags_combinator=ANY&field.has_cve.used=&field.omit_dupes.used=&field.omit_dupes=on&field.affects_me.used=&field.has_patch.used=&field.has_branches.used=&field.has_branches=on&field.has_no_branches.used=&field.has_no_branches=on&field.has_blueprints.used=&field.has_blueprints=on&field.has_no_blueprints.used=&field.has_no_blueprints=on
 
 -----------------------------
+GTK2 Maintenance
+-----------------------------
+
+The GTK2 version of Terminator has gone into deprecated mode as far as
+I'm concerned. If someone wants to pick up the back-porting of fixes
+they can contact me, and I'll give them commit access on the GTK2
+branch. It is better that any focus I can spare is spent on the GTK3
+version.
+
+-----------------------------
 GTK3 Port
 -----------------------------
 
@@ -462,52 +475,36 @@ developers, he came up with a very large patch for rudimentary GTK3
 support. A number of things were incomplete or broken, but it got it
 far enough along that it was no longer an insurmountable cliff face.
 
-Since then I have resolved to port fixes and features between the
-two versions. As I do this I explore and find outstanding issues with
-the port, and it is slowly becoming more usable.
+After that I resolved to port fixes and features between the two
+versions. For a time I managed this, but it got to the point where the
+GTK3 port was better and more stable than the old GTK2 code, due to VTE
+and GTK improvements that added features, and seems to have fixed many
+(if not all) of the segfault crashes that would happen within the GTK2
+libraries.
 
-Eventually the GTK2 version of Terminator will go into a
-deprecated/maintenance mode. Unfortunately due to needing a relatively
-new version of libvte, that switch will not be in the immediate
-future. I'm running trusty (14.04 LTS) and even there I had to build
-libvte 0.38 from source. This makes the GTK3 out of reach for the
-"Joe Bloggs" of the world. I could try and maintain my own PPA of the
-component, but that doesn't help Fedora/OpenSUSE/Arch etc. users.
-Even getting "Joe Bloggs" to add a PPA can be a struggle.
+The port is pretty much complete. I *hope* we've fixed any regressions
+and critical issues. There are a few minor tasks that don't seem to be
+urgent as far as I can see listed below. Feel free to look into these.
+For the record, as of March 2017, with the `gtk3 branch`_ at revision
+around 1760, these are the outstanding items::
 
-And for a real nightmare, I tried to compile the 0.40 version and the
-thing lit up with a smorgasbord of items where my installed packages
-were not new enough.
+    Outstanding GTK3 port tasks/items/reviews/reimplementations etc.
+    ================================================================
+    [    ]  Need to go through all the Gtk.STOCK_* items and remove. Deprecated in 3.10.
+            Very low priority as won't be problem till GTK 4.0 (hopefully!)
+    [    ]  Homogeneous_tabbar removed? Why?
+    [    ]  terminal.py:on_vte_size_allocate, check for self.vte.window missing. Consequences?
+    [    ]  terminal.py:understand diff in args between old fork and new spawn of bash. Consequences?
+    [    ]  VERIFY(9)/FIXME(6) FOR GTK3 items to be dealt with
+    [    ]  Get the debian build stuff up to date and aligned with the GTK2 where appropriate
+    [    ]  LP#1521280 - Reimplement utmp option (for turning off somehow)
 
-If you are feeling brave and adventurous, there are some instructions
-in this `blog post`_ that will help you get the GTK3 version running.
-Assistance knocking off the remaining rough edges will be very much
-appreciated.
-
-For the record, as of October 2015, with the `gtk3 branch`_ at revision
-1612, these are the outstanding items::
-
-    Outstanding GTK3 port tasks/items/reviews etc.
-    ==============================================
-    Outstanding trunk revisions: 1634 & 1637, 1647 (assuming all is good), 1663
-
-    Need to go through all the Gtk.STOCK_* items and remove. Deprecated in 3.10. Very low priority as won't be problem till 4.0.
-    Homogeneous_tabbar removed? Why?
-    terminal.py:on_vte_size_allocate, check for self.vte.window missing. Consequences?
-    terminal.py:understand diff in args between old fork and new spawn of bash. Consequences?
-    VERIFY(8)/FIXME(6) FOR GTK3 items to be dealt with
-
-    Outstanding GTK3 port tasks/items/reviews etc. for future release
-    =================================================================
-    vte 0.40+
-        Reimplement/restore the word_chars stuff.
-
-Once the GTK3 port is done there is also a long overdue port to
+Now the GTK3 port is done there is also a long overdue port to
 Python3, especially in light of some distributions trying to
 eliminate Python2 from the base installs. Yes, Python2 will be with
 us for a long time yet, but this should serve as a warning.
 
-I even have some new items specifically for the GTK3 branch which I'm
+I also have some new items specifically for the GTK3 branch which I'm
 still thinking about, but I'm not ready to declare. I suspect I might
 get a bit of unwanted pressure if I were to mention these, so for now
 they are under NDA. 😃
@@ -516,35 +513,11 @@ they are under NDA. 😃
 .. _gtk3 branch: https://code.launchpad.net/~gnome-terminator/terminator/gtk3
 
 --------------------------
-Terminator API Docs
+Docs for Devs
 --------------------------
 
-Strictly speaking this isn't an API as such, because it is just using
-sphinx-apidoc over the Terminator code base. It's perhaps helpful to
-have this as a document that can be browsed.
-
-`Terminator API docs`_
-
-As it stands, this is rather incomplete, or too terse with no examples
-given. If you look at the terminatorlib.configobj package, you will
-see fairly extensive documentation, along with walk-throughs, etc. This
-particular package was written elsewhere, and brought into Terminator
-to provide configuration handling.
-
-There are also some aspects of the way this document builds that I'm
-not too happy about. The seemingly unnecessary ``terminatorlib``
-root-node in the side bar; the lack of class/method links in the
-sidebar; all ``.py`` files on the same page (this can be changed, but
-then even less is displayed in the sidebar.) If you can help, join
-the A-Team... Or better yet, send me some changes that fix this.
-
-.. _Terminator API docs: ../apidoc/index.html
-
---------------------------
-Other Docs for Developers
---------------------------
-
-Here is a list of some useful sets of documentation:
+Here is a list of some useful sets of documentation collected together
+for convenience:
 
 +---------------------------+-------------------------------------------------------------------+
 | **General**                                                                                   |
@@ -556,12 +529,6 @@ Here is a list of some useful sets of documentation:
 | Bazaar DVCS               | http://doc.bazaar.canonical.com/en/                               |
 +---------------------------+-------------------------------------------------------------------+
 | Launchpad Help            | https://help.launchpad.net/                                       |
-+---------------------------+-------------------------------------------------------------------+
-| **GTK 2**                                                                                     |
-+---------------------------+-------------------------------------------------------------------+
-| PyGTK                     | https://developer.gnome.org/pygtk/stable/                         |
-+---------------------------+-------------------------------------------------------------------+
-| VTE for GTK 2             | https://developer.gnome.org/vte/0.28/                             |
 +---------------------------+-------------------------------------------------------------------+
 | **GTK 3**                                                                                     |
 +---------------------------+-------------------------------------------------------------------+
@@ -583,20 +550,4 @@ Here is a list of some useful sets of documentation:
 +---------------------------+-------------------------------------------------------------------+
 | VTE for GTK 3             | https://developer.gnome.org/vte/0.38/                             |
 +---------------------------+-------------------------------------------------------------------+
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

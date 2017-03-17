@@ -13,8 +13,8 @@ The Grouping Menu
 Manipulating terminal groups
 ----------------------------
 
-Grouping, as the name suggests, allows grouping of terminals allowing
-actions to be taken that affect more than one terminal. As usual,
+Grouping, as the name suggests, allows grouping of terminals so that
+actions can be taken that affect more than one terminal. As usual,
 following along will help understanding, so lets start with a basic
 window, then split into a 2x2 grid.
 
@@ -22,6 +22,8 @@ Let's have another look at the grouping menu for reference, because
 as we proceed, it will change:
 
 .. image:: imgs/grouping_01.png
+   :scale: 100%
+   :align: center
 
 The first item **New group...** allows you to create a named group,
 using an editable field that will appear next to the 3-box icon. By
@@ -29,6 +31,8 @@ default this will be given a randomly selected name from the names
 of the Greek alphabet. Here you can see **Phi** was selected:
 
 .. image:: imgs/grouping_02.png
+   :scale: 100%
+   :align: center
 
 You can either start typing to replace the provided one with something
 more descriptive, or you can accept the default with ``Return``. For
@@ -38,6 +42,8 @@ If you again click the 3-box/group button, you will see that several
 new entries have been added to the menu:
 
 .. image:: imgs/grouping_03.png
+   :scale: 100%
+   :align: center
 
 Because the terminal now has a group the first new entry is **None**
 which will remove the grouping for this terminal.
@@ -60,6 +66,8 @@ Here I've gone ahead and set the upper right terminal to the same
 **Epsilon**.
 
 .. image:: imgs/grouping_04.png
+   :scale: 100%
+   :align: center
 
 A quick glance at the menu again will show that the only change is
 the addition of the *Epsilon* group to the list.
@@ -91,8 +99,8 @@ detailed):
        that are *not* the current terminal.
 
 .. warning:: The terminals with no named group are also considered a
-             group. If you use one of the ``Super`` shortcuts on a
-             terminal with no group, you will also include all the
+             de facto group. If you use one of the ``Super`` shortcuts
+             on a terminal with no group, you will also include all the
              other terminals with no group.
 
 Skipping slightly ahead in the menu, there are two options that make
@@ -167,36 +175,43 @@ to show the following:
 - *Grey* - A terminal that is not a receiver.
 
 There are three settings for broadcasting, selected from the *Group
-menu*. Following are an image of each of these modes, with ``test``
+menu*. Following are images of each of these modes, with ``test``
 typed into the current broadcasting terminal:
 
 - *Broadcast off*
 
-  .. image:: imgs/broadcast_01.png
+  .. figure:: imgs/broadcast_01.png
+     :scale: 100%
+     :align: center
 
-  Here you can see that only the current terminal receives input, even
-  though the upper right terminal is also a part of the *Phi* group.
+     Here you can see that only the current terminal receives input, even
+     though the upper right terminal is also a part of the *Phi* group.
 
 - *Broadcast all*
 
-  .. image:: imgs/broadcast_02.png
+  .. figure:: imgs/broadcast_02.png
+     :scale: 100%
+     :align: center
 
-  Here you can see that all terminals, including those in other groups,
-  or with no group, receive the input.
+     Here you can see that all terminals, including those in other groups,
+     or with no group, receive the input.
 
 - *Broadcast group* (default mode; can be changed in the
   :ref:`prefs-global` tab of :ref:`preferences`.)
 
-  .. image:: imgs/broadcast_03.png
+  .. figure:: imgs/broadcast_03.png
+     :scale: 100%
+     :align: center
 
-  Here you can see that only the terminal(s) in the same group in the
-  same group as the broadcaster receive input.
+     Here you can see that only the terminal(s) in the same group as
+     the broadcaster receive input.
 
-Be careful with additional tabs, windows, or when you are zoomed or
-maximised on a single terminal. Just because you cannot see a terminal
-does not mean the terminal is not receiving. This can cause problems
-if you are typing a destructive command without realising that this
-command is going to other terminals.
+.. warning:: Be careful with additional tabs, windows, or when you are
+             zoomed or maximised on a single terminal. Just because you
+             cannot see a terminal does not mean the terminal is not
+             receiving. This can cause problems if you are typing a
+             destructive command without realising that this command is
+             going to other terminals.
 
 Those with good eyesight may have spotted the other visual indicator
 of the colours in the 3-box icon changing for the different status of
@@ -216,23 +231,24 @@ your hands on the keyboard:
 | Broadcast group | ``Alt``\ +\ ``G`` |
 +-----------------+-------------------+
 
-.. warning:: It has become apparent that IBus causes problems with
-             broadcast input. When multiple keystrokes are used to
-             *compose* a letter, such as the ``AltGr``\ +\ ``[``
-             followed by ``a``\ , ``o``\ , ``u`` keys to get **ä**,
-             **ö**, **ü** characters for the German language.
+.. warning:: It has become apparent that the complexity of the input
+             systems used (IBus, IME, dead key layouts, etc) can cause
+             problems with broadcast input.
 
-             Instead of getting your composed letter in all receivers,
-             you will only get the composed letter in the current
-             terminal. If you copy and paste the character into the
-             current terminal then it will be input into the
+             Instead of getting your intended character in all
+             receivers, you will only get the composed letter in the
+             current terminal, and what goes into the receivers is a
+             bit unpredictable. If you copy and paste the character
+             into the current terminal then it will be input into the
              receivers.
 
-             You may not even realise that you are running IBus.
-             Killing it will temporarily fix the problem. There is
-             a fix for IBus and VTE, but only in the newer builds of
-             VTE. For that we would need the experimental GTK3
-             version of Terminator.
+             You may not even realise that you are running one of these
+             systems (I had IBus by default, although I did not
+             experience issues with it.) Killing or disabling them
+             should temporarily fix the problem. There is a fix for the
+             IBus issue in newer the GTK3 version of Terminator, but we
+             still encounter people for whom this function is not 100%
+             reliable.
 
 ----------------------
 Insert terminal number

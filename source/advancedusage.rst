@@ -67,7 +67,7 @@ Window options
   Hide the window at startup
 
 ``--geometry=GEOMETRY``
-  Set the preferred size and position of the window(see X man page)
+  Set the preferred size and position of the window (see X man page)
 
 ``-T FORCEDTITLE``\ , ``--title=FORCEDTITLE``
   Specify a title for the window
@@ -108,11 +108,13 @@ window manager. Some window managers allow various rules to be
 applied, or actions to be taken, depending on how the window
 system perceives the window. These settings facilitate that.
 
-``-c CLASSNAME``\ , ``--classname=CLASSNAME``
-  Set a custom name (WM_CLASS) property on the window
-
 ``-r ROLE``\ , ``--role=ROLE``
   Set a custom WM_WINDOW_ROLE property on the window
+
+.. note:: In case you're looking for the previously supported
+          ``classname`` setting, it has been removed as the gtk
+          libraries deprecated the function call that allowed forcing
+          the window class in this way.
 
 .. _command-line-options-debugging:
 
@@ -150,6 +152,12 @@ There are many more specific details in the manual page::
 
   man terminator_config
 
+.. warning:: If you place items in the wrong location within the config
+             file it can cause unintended results. In the worst case
+             Terminator will fail to load. In the best case it will
+             have no effect and you will simply confused as to why your
+             change has made no difference.
+
 .. _debugging:
 
 ---------
@@ -157,8 +165,9 @@ Debugging
 ---------
 
 There is inbuilt debugging features in Terminator. The simplest is to
-start Terminator from another terminal with the option ``-d``. This
-will dump many debug statements to the launch terminal.
+start Terminator from another terminal application (i.e. gnome-terminal)
+with the option ``-d``. This will dump many debug statements to the
+launching terminal.
 
 .. note:: If the DBus is active in any other Terminator, then by
           default your attempt to launch with debug will launch
@@ -185,6 +194,8 @@ Selecting it will give the following new tab with dedicated debug
 terminal:
 
 .. image:: imgs/debug_tab.png
+   :scale: 100%
+   :align: center
 
 This prompt is a standard Python interactive prompt, but this is
 connected to the Terminator instance. You can explore the applications
@@ -211,7 +222,7 @@ Here you will see the port number, and you can simply use::
              internal structure more easily.
 
 .. warning:: Using the ``-dd`` option will make the :ref:`dbus`
-             interface problematic. Any attempt to use :ref:`remotinator`
+             interface temperamental. Any attempt to use :ref:`remotinator`
              will hang the main application.
 
 The debug options and their usage are detailed
@@ -237,13 +248,20 @@ In Terminator we currently use DBus for two tasks:
 
 - Enable :ref:`remotinator`
 
-Running a single instance of Terminator will cause problems if you
-are trying to launch a :ref:`layout <layouts>`, when an instance is
-already running, so when configuring a program, script or menu item
-to launch a layout, you need to remember to include the ``-u`` option
-that will disable the DBus for that instance. :ref:`layout-launcher`
-does this for you, and as a result any launched layout is running
-without DBus, and cannot be controlled with DBus.
+.. warning:: Running a single instance of Terminator can cause behaviour
+             that is unexpected by the user when a terminator instance
+             is already running. They do not have seperate processes,
+             and currently some features (in particular broadcast, and
+             grouping keys) may include more terminals than you expect.
+             You can work around this by using the ``-u`` option that
+             will disable the DBus for that secondary instance.
+
+             :ref:`layout-launcher` already does this for you, and as a
+             result any layout launched this way is running without
+             DBus, and cannot be controlled with DBus. If you use the
+             command line option ``-l <LAYOUT_NAME>`` to open a new
+             layout, this will **not** disable the DBus unless you
+             explicitly add the ``-u`` option too.
 
 .. note:: There is quite some scope for improving this. I have a vague
           notion of a single master server and multiple instance
@@ -260,9 +278,9 @@ Remotinator
 
 Remotinator is a minimal wrapper around making DBus calls, and is
 typically run from *within* a Terminator terminal. This is not
-strictly necessary, but if not you will have to do some extra work
-to determine the valid UUID of a current terminal and pass it as the
-``TERMINATOR_UUID`` environment variable, or as the value to the
+strictly necessary but, if you do not, you will have to do some extra
+work to determine the valid UUID of a current terminal and pass it as
+the ``TERMINATOR_UUID`` environment variable, or as the value to the
 ``-u``\ /\ ``--uuid`` option. Remotinator is called within Terminator
 with::
 
@@ -276,42 +294,46 @@ or with one of the following::
 
 to force the UUID, or call it from outside Terminator.
 
+There are a couple of commands that do not require a UUID. Please see
+the table below for details.
+
 The following commands are currently enabled:
 
 +-----------------------+-----------------------------------------+
 | Command               | Action                                  |
 +=======================+=========================================+
-| get_tab [1]_          | Get the UUID of a parent tab            |
+| get_tab               | Get the UUID of a parent tab            |
 +-----------------------+-----------------------------------------+
-| get_tab_title [1]_    | Get the title of a parent tab           |
+| get_tab_title         | Get the title of a parent tab           |
 +-----------------------+-----------------------------------------+
-| get_terminals         | Get a list of all terminals             |
+| get_terminals [1]_    | Get a list of all terminals             |
 +-----------------------+-----------------------------------------+
-| get_window [1]_       | Get the UUID of a parent window         |
+| get_window            | Get the UUID of a parent window         |
 +-----------------------+-----------------------------------------+
-| get_window_title [1]_ | Get the title of a parent window        |
+| get_window_title      | Get the title of a parent window        |
 +-----------------------+-----------------------------------------+
-| hsplit [1]_           | Split the current terminal horizontally |
+| hsplit                | Split the current terminal horizontally |
 +-----------------------+-----------------------------------------+
-| new_tab [1]_          | Open a new tab                          |
+| new_tab               | Open a new tab                          |
 +-----------------------+-----------------------------------------+
-| new_window            | Open a new window                       |
+| new_window [1]_       | Open a new window                       |
 +-----------------------+-----------------------------------------+
-| vsplit [1]_           | Split the current terminal vertically   |
+| vsplit                | Split the current terminal vertically   |
 +-----------------------+-----------------------------------------+
 
-.. [1] These entries require either TERMINATOR_UUID environment var,
-       or the --uuid option must be used.
+.. [1] These commands **do not** require the UUID. If not marked as such
+       then the command **does** require the UUID.
 
 Calling Remotinator without a command or with the ``-h`` will print
 the options and available commands to the terminal.
 
-.. note:: Because a layout (unless launched from the command line as
-          as the first instance) is normally launched as a separate
-          instance requiring the ``-u``, Remotinator will not work
-          within layouts. As mentioned in the :ref:`dbus` section,
-          this has the potential to be improved upon.
+.. note:: If a layout has been launched using the :ref:`layout-launcher`
+          or using the ``-u`` option Remotinator will not work
+          with that layout as it is not connected to the DBus session.
 
-There is a lot of scope for expanding this feature, and it is relatively
-simple to do, so is an ideal task for dipping ones toes.
+          As mentioned in the :ref:`dbus` section, this has the
+          potential to be improved upon.
+
+There is a lot of scope for expanding the available commands, and it is
+relatively simple to do, so is an ideal task for dipping ones toes.
 

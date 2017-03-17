@@ -14,21 +14,27 @@ windows with the terminals arranged just how you like, and even
 launching unique commands in each one.
 
 You have already seen a glimpse of this in the :ref:`prefs-layouts`
-tab of the :ref:`preferences`. Here it is again:
+tab of the :ref:`preferences`. If you haven't already read the
+information there, you should probably go back and do so. Here's the
+:ref:`prefs-layouts` tab again:
 
 .. image:: imgs/prefs_layouts.png
+   :scale: 100%
+   :align: center
 
 It's simple to create a new layout. Just launch new windows, add tabs
 and splits, arrange them, and customise them to your liking.
 
 Layouts will currently directly detect and save:
 
-- Window sizes and positions as well as the  fullscreen or maximised  state
+- Window sizes and positions as well as the fullscreen or maximised
+  state
 - Splitter positions
 - Custom window, tab and titlebar names
 - The profile of each terminal
 - Group setting of each terminal
-- The active terminal per window or tab, and the active tab per window if applicable
+- The active terminal per window or tab, and the active tab per window
+  if applicable
 - The UUID of each terminal
 
 When done, use the :ref:`prefs-layouts` section of the :ref:`preferences`
@@ -52,7 +58,8 @@ prompts for a name, and *Save* updates the currently selected layout.
              do **not** need to use the *Save* button to keep these
              settings.
              
-             There is potential to improve this behaviour.
+             There is potential to improve this behaviour, as it *is*
+             a little unintuitive.
 
 .. _layout-launcher:
 
@@ -68,6 +75,7 @@ about to launch. No-one has the stamina to draw 30 distinct icons
 representing all these layouts either!
 
 .. image:: imgs/layoutlauncher.png
+   :scale: 100%
    :align: right
 
 Enter the **Layout Launcher**, as shown on the right. This will list

@@ -27,11 +27,12 @@ do, because examples are below, is to:
 - create handlers for strings that match a pattern.
 
 .. note:: .. image:: imgs/plugins_links.png
+             :scale: 100%
              :align: center
 
-          Several of the included plugins create :ref:`clickable-items` in
-          the terminal. These are made apparent by underlining the
-          item when the mouse hovers over it.
+          Several of the included plugins create :ref:`clickable-items`
+          in the terminal. These are highlighted by underlining the item
+          when the mouse hovers over it.
 
 ------------------------------
 Included plugins
@@ -75,6 +76,9 @@ There is one option for this plugin:
           Which would wait 30 seconds before showing another
           notification of activity.
 
+.. note:: Bear in mind also that your notification may look very
+          different to the image shown due to theming.
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 APT URL Handler
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -102,6 +106,7 @@ the window show below. Below that is a list of user configured
 commands that can be chosen.
 
 .. image:: imgs/custom_commands.png
+   :scale: 100%
    :align: center
 
 In this window you can create a **New** item, and **Edit** or
@@ -114,6 +119,12 @@ item is shown in sub-menu, and a disabled one is not. The **Name** is
 used for the sub-menu item text. The **Command** is the text that will
 be entered into the current terminal with a ``Return`` at the end to
 execute/enter it. You *do not* get a chance to edit the text first.
+
+A rudimentary support for sub-trees is implemented. Simply add one or
+more ``/`` in the *Name* field, and the tree structure will be created.
+Positioning is determined by the first time a sub-tree is referenced, so
+a later reference will be attached to the sub-tree defined by an earlier
+reference.
 
 .. note:: If other terminals are receiving, they too will receive and
           execute the *Command*.
@@ -161,6 +172,9 @@ values given, the notification may take 14.9 seconds to appear.
 
           Which would check every second if the terminal had been
           silent for 30 seconds.
+
+.. note:: Bear in mind also that your notification may look very
+          different to the image shown due to theming.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Launchpad Bug URL Handler
@@ -292,6 +306,12 @@ Answers on a postcard...
 .. warning:: I have done no testing or checking of these plugins. You
              use at your own risk, and you are responsible for
              evaluating the code for bugs, issues, and security.
+
+.. warning:: While we have ensured the included plugins have received
+             the required changes to function with GTK3, the third party
+             plugins are not under our control. Examine the change logs
+             of the respective plugin and look for commits that mention
+             GTK3 updates.
 
 In absolutely no order at all...
 
