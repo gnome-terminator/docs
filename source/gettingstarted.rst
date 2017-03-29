@@ -325,6 +325,11 @@ will be rebalanced. It will not affect terminals in other windows or tabs.
    :scale: 100%
    :align: center
 
+.. note:: Notice in the last two shots that you can shrink a terminal
+          to a point where it is unusable or even completely hidden. We
+          don't place an arbitrary minimum size. Some people want the
+          ability to move the splitter all the way.
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Dragging and dropping a terminal
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -491,6 +496,13 @@ Resulting in a search bar at the bottom of the focused terminal:
 
 This has buttons for moving back and forward through the results, as
 well as an option to wrap the search around.
+
+.. note:: At this time there is no highlighting of the search string.
+          This is a historical limitation due to the manner in which
+          the implmentation was originally done, way back when. I
+          intend to remove the old code, replacing with the built-in
+          libvte search function in the 2.1 release. This will then
+          highlight searched text.
 
 .. _zooming-the-terminal:
 

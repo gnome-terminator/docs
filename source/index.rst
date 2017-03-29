@@ -10,7 +10,7 @@ Sometimes it is not always
 clear just how many little shortcuts and features there are in Terminator. This
 manual hopes to reduce the confusion.
 
-A quick word on style. I have none. 😃 I have an casual way of talking and writing,
+A quick word on style. I have none. 😃 I have  casual way of talking and writing,
 and a strange sense of humour. I also tend to use random pop-culture references
 a lot, but often in ways that make no sense. If this is a problem you are
 entitled to a refund of the money you paid to me to write this... 😎

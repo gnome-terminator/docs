@@ -213,6 +213,13 @@ typed into the current broadcasting terminal:
              destructive command without realising that this command is
              going to other terminals.
 
+             In particular, note that when you run Terminator a second
+             time, by default you are *not* running a completely
+             separate process. It *is* still connected to the grouping
+             of the initially launched Terminator process. If you need
+             a completely separated window you need to use the ``-u``
+             option or disable the DBus interface in your config file.
+
 Those with good eyesight may have spotted the other visual indicator
 of the colours in the 3-box icon changing for the different status of
 the terminals too. When you are zoomed or maximised, the presence of
