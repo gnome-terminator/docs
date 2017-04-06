@@ -292,29 +292,29 @@ How do I...
 ...make Terminator work like Quake style terminals?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-  You can get close, but it isn't a perfect recreation, as Terminator
-  was not designed with this in mind, but improvements are always welcome!
+You can get close, but it isn't a perfect recreation, as Terminator
+was not designed with this in mind, but improvements are always welcome!
 
-  - Window state: Hidden
-  - Always on top: On
-  - Show on all workspaces: On
-  - Hide on lose focus: On
-  - Hide from taskbar
-  - Window borders: Off (use ``Alt``\ +\ ``click-drag`` and 
-    ``Alt``\ +\ ``middle-click-drag`` to position and size window.)
-  - Set the Toggle window visibility shortcut to your preference
+- Window state: Hidden
+- Always on top: On
+- Show on all workspaces: On
+- Hide on lose focus: On
+- Hide from taskbar
+- Window borders: Off (use ``Alt``\ +\ ``click-drag`` and 
+  ``Alt``\ +\ ``middle-click-drag`` to position and size window.)
+- Set the Toggle window visibility shortcut to your preference
 
-  .. note:: It must be the first Terminator instance started, because
-            at present only the first instance can bind to the Window 
-            toggle.
+.. note:: It must be the first Terminator instance started, because
+          at present only the first instance can bind to the Window 
+          toggle.
 
-  This will give you a terminal hidden at startup that appears with a
-  keypress and disappears, either with another keypress, or losing focus.
-  It will stay on top, and appear on whichever workspace you are on.
+This will give you a terminal hidden at startup that appears with a
+keypress and disappears, either with another keypress, or losing focus.
+It will stay on top, and appear on whichever workspace you are on.
 
-  Something that we don't have is the slide in action of a true Quake
-  style terminal. The terminal will simply flick into view, and flick
-  out of view.
+Something that we don't have is the slide in action of a true Quake
+style terminal. The terminal will simply flick into view, and flick
+out of view.
 
-  .. warning:: The Hide on lose focus option is problematic at this
-               time. You will probably find it very frustrating.
+.. warning:: The Hide on lose focus option is problematic at this
+             time. You will probably find it very frustrating.
