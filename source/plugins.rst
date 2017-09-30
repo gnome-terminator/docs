@@ -382,6 +382,9 @@ https://www.snip2code.com/Snippet/58595/Terminator-plugin----log-the-output-of-t
   - my_logger: Log the output to a file with a time-stamp as the name, and prefix each line with the time.
     (Seems to be similar to, or derived from, the included one)
 
+https://github.com/OlivierBoucher/terminator-k8s-plugin
+  - k8s: NEW! Work in progress, with the ultimate goal to provide k8s specific informations in the shell title bar.
+
 ------------------------------
 Installing a plugin
 ------------------------------

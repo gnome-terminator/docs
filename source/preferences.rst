@@ -560,7 +560,7 @@ Scrolling
   - *On the right side*
   - *Disabled*
 
-**Scroll on output** (default: on)
+**Scroll on output** (default: off)
 
   Moves terminal to end of scrollback buffer when any output occurs.
 
