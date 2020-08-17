@@ -242,6 +242,10 @@ Terminal Titlebar
 
     If active and set, then the custom font to be used in the titlebar.
 
+  **Title bar at bottom** (default: off)
+
+    If set the terminal title bar is placed at the bottom of the terminal.   
+
 .. _prefs-profiles:
 
 --------
