@@ -18,9 +18,11 @@ Awesome! I've been getting my head around the whole translation
 bit (English monoglot I'm afraid), and as a result there has been
 a lot of churn in the translations. So what are you waiting for?
 
-Speak some other language? Take a look at
-https://translations.launchpad.net/terminator because you might
-just be the <insert language here> speaker that we're looking for.
+Speak some other language? Take a look at `the translation page`_
+because you might just be the <insert language here> speaker that
+we're looking for.
+
+.. _the translation page: https://github.com/gnome-terminator/terminator/blob/master/TRANSLATION.md
 
 -----------------------------
 Improve icons/artwork
