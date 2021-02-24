@@ -10,7 +10,7 @@ This Manual and included images are wholly new pieces created by the current mai
 How to Build
 ------------
 
-* Install the shinx package and the ReadTheDocs theme `pip3 install sphinx sphinx-rtd-theme` 
+* Install the shinx package and the ReadTheDocs theme ``pip3 install sphinx sphinx-rtd-theme`` 
 * Clone this repository
 * ``cd docs/source``
 * Build the HTML pages: ``make html``
