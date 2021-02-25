@@ -2,5 +2,5 @@ Authors
 -------
 
 * Steve Boddy
-* Bramblebery4 02/2021
+* Bramblebery4 (02/2021)
 
