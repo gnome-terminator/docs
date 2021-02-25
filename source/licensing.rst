@@ -29,7 +29,8 @@ provided under the `CC-BY-SA licence`_.
 This **Manual** and **API documentation** are wholly new pieces
 created by the current maintainer *Steve Boddy*, and are distributed
 under the `CC-BY-SA licence`_, as are the horrific attempts by yours
-truly at using Cory's icon to provide page identities.
+truly at using Cory's icon to provide page identities. It is updated
+by *Felix Mölder* and also published under the `CC-BY-SA licence`_.
 
 The **Documentation Theme**  is the `Read The Docs`_ theme by *Dave
 Snider*, which is distributed under the `MIT licence`_. The theme is
