@@ -17,8 +17,8 @@ with Terminator's features. Additional functional areas are explored
 in other pages, but at the end of this page you'll be getting a good
 idea of the power of Terminator.
 
-When you first start Terminator you will get a default, minimal window,
-looking something like the following:
+When you start Terminator for the first time you will get a default, minimal window,
+looks like the following:
 
 .. image:: imgs/basic_window.png
    :scale: 100%
@@ -29,8 +29,8 @@ similar. It may in fact look a little too minimal to some of you, but
 this is a deliberate policy. Keep the focus on the terminal, not on a
 cluttered interface. This is why we don't waste space on a traditional
 menu bar and toolbar. Even the terminal scrollbar and titlebar (the
-red strip) can be turned off, although you do lose ease-of-access to
-some of Terminators more powerful features if you do.
+red strip on the top) can be turned off, although you may lose |br|
+ease-of-access to some of Terminators more powerful features then.
 
 Many functions are triggered with keyboard shortcuts. But mousers aren't
 completely abandoned. Lets look again at the basic interface, but with
@@ -44,12 +44,12 @@ the two primary menus showing:
           impossible to have both menus up at the same time.
 
 #. :ref:`context-menu` - 
-   This is the main menu reached with ``right-click`` over a terminal, and
+   This is the main menu reached with ``right-click`` in a terminal, and
    will let you access all the settings, profiles, shortcuts and 
-   configurations. It is however kept brief to avoid the mega-menus that
+   configurations. However, it is kept brief to avoid the mega-menus that
    sometimes grow unchecked.
 #. :ref:`grouping-menu` - 
-   This is reached with a ``click`` on the trio of coloured boxes in the
+   This is reached with a ``left-click`` on the trio of coloured boxes in the
    titlebar. Later, when we cover Grouping and broadcasting to multiple
    terminals we will cover this properly. For now it is enough to know
    where it is and how to trigger it.
@@ -65,20 +65,20 @@ The Context Menu
 ----------------
 
 The context menu is split into five parts. The first part is the standard
-Copy and Paste for text that has been highlighted with the mouse. There
-are shortcuts too:
+Copy and Paste for text that has been highlighted with the mouse. The 
+shortcuts are:
 
 +--------+----------------------------------+
 | Action | Default Shortcut                 |
 +========+==================================+
-| Copy   | ``Shift``\ +\ ``Ctrl``\ +\ ``C`` |
+| Copy   | ``Ctrl``\ +\ ``Shift``\ +\ ``C`` |
 +--------+----------------------------------+
-| Paste  | ``Shift``\ +\ ``Ctrl``\ +\ ``V`` |
+| Paste  | ``Ctrl``\ +\ ``Shift``\ +\ ``V`` |
 +--------+----------------------------------+
 
 The second section is where the fun starts. **Split Horizontally** and **Split
 Vertically** are used to divide the current space for the current terminal
-half. Your original terminal takes the top/left half, and a new terminal
+half. Your original terminal takes the top/left in half, and a new terminal
 is started and placed in the right/bottom half. You can repeat this as
 often as you wish, sub-dividing down until the terminals are completely
 impractical. Here's a window that is split Horizontally, Vertically, and
@@ -101,7 +101,7 @@ way Terminator acts a lot like a tiling window manger. It lets you arrange
 many terminals in a single view, allowing adjustments as your needs change.
 
 The last item in this part of the menu is to **Open tab**. This will give
-you a tab like most other terminal programs. Unlike most other terminals,
+you a tab like most other terminals do. Unlike most other terminals,
 in Terminator you can also split the terminals in each tab as often as you
 like.
 
