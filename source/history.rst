@@ -34,13 +34,13 @@ All contributions and improvements are welcome.
 +--------------+------------+-----------------+------------------------------------+
 | 1.91, r1759  | 2017-03-29 | Stephen Boddy   | Updates for the GTK3 Port     |br| |
 +--------------+------------+-----------------+------------------------------------+
-| 1.92         | 2017-04-18 | Stephen Boddy   | Updates for 1.92 release      |br| |
+| 1.92         | 2017-04-18 | Markus Frosch   | Updates for 1.92 release      |br| |
 +--------------+------------+-----------------+------------------------------------+
-| 2.0          | 2020-10-06 | Stephen Boddy   | Updates for 2.0 release       |br| |
+| 2.0          | 2020-10-06 | Matt Rose       | Updates for 2.0 release       |br| |
 +--------------+------------+-----------------+------------------------------------+
-| 2.0.1        | 2020-10-11 | ?????????????   | Minor bugfix release          |br| |
+| 2.0.1        | 2020-10-11 | Matt Rose       | Minor bugfix release          |br| |
 +--------------+------------+-----------------+------------------------------------+
-| 2.1          | 2021-01-04 | ?????????????   | Updates for 2.1 release       |br| |
+| 2.1          | 2021-01-04 | Matt Rose       | Updates for 2.1 release       |br| |
 +--------------+------------+-----------------+------------------------------------+
 
 For a more detailed overview and changelogs see `release notes`_ and `changelogs`_.
