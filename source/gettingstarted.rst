@@ -495,7 +495,7 @@ a limitation that the found string is not highlighted.
 +--------------+----------------------------------+
 | Action       | Default Shortcut                 |
 +==============+==================================+
-| Begin search | ``Super``\ +\ ``Ctrl``\ +\ ``F`` |
+| Begin search | ``Ctrl``\ +\ ``Shift``\ +\ ``F`` |
 +--------------+----------------------------------+
 
 Resulting in a search bar at the bottom of the focused terminal:
@@ -509,10 +509,10 @@ well as an option to wrap the search around.
 
 .. note:: At this time there is no highlighting of the search string.
           This is a historical limitation due to the manner in which
-          the implmentation was originally done, way back when. I
-          intend to remove the old code, replacing with the built-in
-          libvte search function in the 2.1 release. This will then
-          highlight searched text.
+          the implmentation was originally done, way back when.
+          Removing the old code and replacing with the built-in
+          libvte search function would then highlight the text (Maybe
+          a good new issue).
 
 .. _zooming-the-terminal:
 
@@ -533,15 +533,15 @@ terminal.
 +------------------+------------------------------------------+
 | Target reset     | ``Ctrl``\ +\ ``0``                       |
 +------------------+------------------------------------------+
-| +Receivers in    | ``Shift``\ +\ ``Ctrl``\ +\ ``wheelup``   |
+| +Receivers in    | ``Ctrl``\ +\ ``Shift``\ +\ ``wheelup``   |
 +------------------+------------------------------------------+
-| +Receivers out   | ``Shift``\ +\ ``Ctrl``\ +\ ``wheeldown`` |
+| +Receivers out   | ``Ctrl``\ +\ ``Shift``\ +\ ``wheeldown`` |
 +------------------+------------------------------------------+
 | +Receivers reset | N/A (TBD, plus in/out)                   |
 +------------------+------------------------------------------+
-| All in           | ``Super``\ +\ ``Ctrl``\ +\ ``wheelup``   |
+| All in           | ``Ctrl``\ +\ ``Super``\ +\ ``wheelup``   |
 +------------------+------------------------------------------+
-| All out          | ``Super``\ +\ ``Ctrl``\ +\ ``wheeldown`` |
+| All out          | ``Ctrl``\ +\ ``Super``\ +\ ``wheeldown`` |
 +------------------+------------------------------------------+
 | All reset        | N/A (TBD, plus in/out)                   |
 +------------------+------------------------------------------+
@@ -580,7 +580,7 @@ or the window title can be set using a
 Insert terminal number
 -----------------------------------
 
-These shortcuts let you enumerate your terminals. It is handy if you
+These shortcuts let you enumerate your terminals. It can be handy if you
 need to login to a number of sequentially numbered machines. With
 multiple terminals the ordering may seem strange, but this is due to
 the nature of the splitting and the order in which the splits were
