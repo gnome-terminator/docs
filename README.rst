@@ -1,4 +1,4 @@
-Terminator Manual (GTK2)
+Terminator Manual (GTK3)
 ========================
 
 Fully fleshed-out manual for Terminator.
