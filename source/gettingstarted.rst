@@ -136,7 +136,8 @@ the scrollbar on a per terminal basis. There is also a way to define this
 in the Profiles. **Preferences** lets you configure and tune Terminator to
 better  suit your needs and is further described :ref:`here <preferences>`.
 Lastly, **Encodings** will allow you to select a different encoding to the
-default of UTF-8.
+default of UTF-8. Finally we have **Layouts...** where for now the only option
+default. For more options see :ref:`here <layouts>`.
 
 There are actually additional optional items that can be added to the
 menu that will only be shown if you enable those :ref:`plugins` that
@@ -393,7 +394,7 @@ layout:
 +-------------------+--------------------------+--------------------------------------------------+
 | Split terminal    | Horizontally, Vertically | ``Ctrl``\ +\ ``Shift``\ +\ ``O``\ /\ ``E``       |
 +-------------------+--------------------------+--------------------------------------------------+
-| Hide window [#]_  |                          | ``Ctrl``\ +\ ``Shift``\ +\ ``Alt``\ +\ ``A``     |
+| Hide window [#]_  |                          | ``Ctrl``\ +\ ``Alt``\ +\ ``A``                   |
 +-------------------+--------------------------+--------------------------------------------------+
 | Close window      |                          | ``Ctrl``\ +\ ``Shift``\ +\ ``Q``                 |
 +-------------------+--------------------------+--------------------------------------------------+
@@ -565,7 +566,7 @@ In Terminator you can rename three things:
 +================+===========================+================================+
 | Window title   | N/A                       | ``Ctrl``\ +\ ``Alt``\ +\ ``W`` |
 +----------------+---------------------------+--------------------------------+
-| Tab title      | ``double-click`` tab      | ``Ctrl``\ +\ ``Alt``\ +\ ``A`` |
+| Tab title      | ``double-click`` tab      | N/A, TBD                       |
 +----------------+---------------------------+--------------------------------+
 | Terminal title | ``double-click`` titlebar | ``Ctrl``\ +\ ``Alt``\ +\ ``X`` |
 +----------------+---------------------------+--------------------------------+
