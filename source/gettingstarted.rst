@@ -427,7 +427,7 @@ layout:
 Dynamic layouts
 ^^^^^^^^^^^^^^^ 
 
-The docs here still needs to be implemented.
+Here the docs needs to be improved.
 
 -----------------------------------
 Resetting the terminal
