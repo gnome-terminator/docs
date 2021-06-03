@@ -744,6 +744,5 @@ About
 
 A simple panel describing a bit about the application, and a set of
 links that will guide users to some helpful Terminator project
-resources. There's also a mysterious button... I wonder what happens
-when I press it?...
+resources.
 

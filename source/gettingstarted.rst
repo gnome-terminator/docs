@@ -17,8 +17,8 @@ with Terminator's features. Additional functional areas are explored
 in other pages, but at the end of this page you'll be getting a good
 idea of the power of Terminator.
 
-When you first start Terminator you will get a default, minimal window,
-looking something like the following:
+When you start Terminator for the first time you will get a default, minimal window,
+looks like the following:
 
 .. image:: imgs/basic_window.png
    :scale: 100%
@@ -29,8 +29,8 @@ similar. It may in fact look a little too minimal to some of you, but
 this is a deliberate policy. Keep the focus on the terminal, not on a
 cluttered interface. This is why we don't waste space on a traditional
 menu bar and toolbar. Even the terminal scrollbar and titlebar (the
-red strip) can be turned off, although you do lose ease-of-access to
-some of Terminators more powerful features if you do.
+red strip on the top) can be turned off, although you may lose |br|
+ease-of-access to some of Terminators more powerful features then.
 
 Many functions are triggered with keyboard shortcuts. But mousers aren't
 completely abandoned. Lets look again at the basic interface, but with
@@ -44,12 +44,12 @@ the two primary menus showing:
           impossible to have both menus up at the same time.
 
 #. :ref:`context-menu` - 
-   This is the main menu reached with ``right-click`` over a terminal, and
+   This is the main menu reached with ``right-click`` in a terminal, and
    will let you access all the settings, profiles, shortcuts and 
-   configurations. It is however kept brief to avoid the mega-menus that
+   configurations. However, it is kept brief to avoid the mega-menus that
    sometimes grow unchecked.
 #. :ref:`grouping-menu` - 
-   This is reached with a ``click`` on the trio of coloured boxes in the
+   This is reached with a ``left-click`` on the trio of coloured boxes in the
    titlebar. Later, when we cover Grouping and broadcasting to multiple
    terminals we will cover this properly. For now it is enough to know
    where it is and how to trigger it.
@@ -65,20 +65,20 @@ The Context Menu
 ----------------
 
 The context menu is split into five parts. The first part is the standard
-Copy and Paste for text that has been highlighted with the mouse. There
-are shortcuts too:
+Copy and Paste for text that has been highlighted with the mouse. The 
+shortcuts are:
 
 +--------+----------------------------------+
 | Action | Default Shortcut                 |
 +========+==================================+
-| Copy   | ``Shift``\ +\ ``Ctrl``\ +\ ``C`` |
+| Copy   | ``Ctrl``\ +\ ``Shift``\ +\ ``C`` |
 +--------+----------------------------------+
-| Paste  | ``Shift``\ +\ ``Ctrl``\ +\ ``V`` |
+| Paste  | ``Ctrl``\ +\ ``Shift``\ +\ ``V`` |
 +--------+----------------------------------+
 
 The second section is where the fun starts. **Split Horizontally** and **Split
 Vertically** are used to divide the current space for the current terminal
-half. Your original terminal takes the top/left half, and a new terminal
+half. Your original terminal takes the top/left in half, and a new terminal
 is started and placed in the right/bottom half. You can repeat this as
 often as you wish, sub-dividing down until the terminals are completely
 impractical. Here's a window that is split Horizontally, Vertically, and
@@ -101,7 +101,7 @@ way Terminator acts a lot like a tiling window manger. It lets you arrange
 many terminals in a single view, allowing adjustments as your needs change.
 
 The last item in this part of the menu is to **Open tab**. This will give
-you a tab like most other terminal programs. Unlike most other terminals,
+you a tab like most other terminals do. Unlike most other terminals,
 in Terminator you can also split the terminals in each tab as often as you
 like.
 
@@ -136,7 +136,8 @@ the scrollbar on a per terminal basis. There is also a way to define this
 in the Profiles. **Preferences** lets you configure and tune Terminator to
 better  suit your needs and is further described :ref:`here <preferences>`.
 Lastly, **Encodings** will allow you to select a different encoding to the
-default of UTF-8.
+default of UTF-8. Finally we have **Layouts...** where for now the only option
+default. For more options see :ref:`here <layouts>`.
 
 There are actually additional optional items that can be added to the
 menu that will only be shown if you enable those :ref:`plugins` that
@@ -149,43 +150,44 @@ Navigating around
 Apart from the obvious of clicking the terminal for focus, there are a number
 of shortcuts that will move the focus around:
 
-+-------------------+-----------------------+--------------------------------------------+
-| Action            | Options               | Default Shortcut                           |
-+===================+=======================+============================================+
-| Move focus        | Up, Down, Left, Right | ``Alt``\ +\ ``<Arrow>``                    |
-+-------------------+-----------------------+--------------------------------------------+
-| Cycle to terminal | Next, Prev            | (``Shift``\ +)\ ``Ctrl``\ +\ ``Tab``       |
-+-------------------+-----------------------+--------------------------------------------+
-| Focus to terminal | Next, Prev            | ``Shift``\ +\ ``Ctrl``\ +\ ``N``\ /\ ``P`` |
-+-------------------+-----------------------+--------------------------------------------+
-| Switch to tab #   | 1 to 10               |                                            |
-+-------------------+-----------------------+--------------------------------------------+
-| Switch tab        | Previous, Next        | ``Ctrl``\ +\ ``PgUp``\ /\ ``PgDn``         |
-+-------------------+-----------------------+--------------------------------------------+
-| Context menu      |                       | ``Menu Key``                               |
-+-------------------+-----------------------+--------------------------------------------+
-| Help [#]_         |                       | ``F1``                                     |
-+-------------------+-----------------------+--------------------------------------------+
++-------------------+-----------------------+----------------------------------------------+
+| Action            | Options               | Default Shortcut                             |
++===================+=======================+==============================================+
+| Move focus        | Up, Down, Left, Right | ``Alt``\ +\ ``<Arrow>``                      |
++-------------------+-----------------------+----------------------------------------------+
+| Cycle to terminal | Next, Prev            | ``Ctrl``\+\ ``Tab`` or ``Shift``\+\ ``Tab``  |
++-------------------+-----------------------+----------------------------------------------+
+| Focus to terminal | Next, Prev            | ``Ctrl``\ +\ ``Shift``\ +\ ``N``\ /\ ``P``   |
++-------------------+-----------------------+----------------------------------------------+
+| Switch to tab #   | 1 to 10               |                                              |
++-------------------+-----------------------+----------------------------------------------+
+| Switch tab        | Previous, Next        | ``Ctrl``\ +\ ``PgUp``\ /\ ``PgDn``           |
++-------------------+-----------------------+----------------------------------------------+
+| Context menu      |                       | ``Menu Key``                                 |
++-------------------+-----------------------+----------------------------------------------+
+| Help [#]_         |                       | ``F1``                                       |
++-------------------+-----------------------+----------------------------------------------+
 
 .. [#] Although as you're reading this, I guess you figured that one out!
 
 Once the Context menu is visible, it can be navigated with the arrow keys.
 
-.. note:: For me the two different sets of next/prev shortcuts are a bit of a
-          mystery. Something to look into.
+..
+ .. note:: For me the two different sets of next/prev shortcuts are a bit of a
+           mystery. Something to look into.
 
 .. _clickable-items:
 
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 Click-able items
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
+Terminator can make strings of text that match a pattern click-able:
 
 .. image:: imgs/plugins_links.png
    :scale: 100%
    :align: center
 
-Terminator can make strings of text that match a pattern click-able.
 The user can perform two additional actions on these when the mouse
 pointer hovers over a matched item:
 
@@ -267,7 +269,7 @@ the tabs, and how the windows and tabs are divided up into terminals.
 It also includes the positions, dimensions, as well as other aspects
 related to how Terminator looks.
 
-Besides the items in the :ref:`context-menu` there are three main
+Besides the items in the :ref:`context-menu` there are four main
 methods to adjust the layout.
 
 ^^^^^^^^^^^^^^^^^^^
@@ -282,12 +284,11 @@ about, and you now have something resembling the following, minus the highlights
    :align: center
 
 Terminator lets us *rebalance* the terminals, equally dividing the available
-space between the *siblings*.
- 
-The different highlighting shows the siblings. The key thing to understand is
+space between the *siblings*. The different highlighting shows the siblings. The key thing to understand is
 that the blue splitters are considered siblings, which are *children* of the
-green *parent*. The green is itself a child of the red parent.  By double-clicking
-the splitter, the space will be divided evenly between the siblings. So,
+green *parent*. The green is itself a child of the red parent.
+
+By double-clicking the splitter, the space will be divided evenly between the siblings. So,
 double-clicking any of the blue splitters will give:
 
 .. image:: imgs/rebalance_02.png
@@ -387,34 +388,34 @@ layout:
 +===================+==========================+==================================================+
 | New instance [#]_ |                          | ``Super``\ +\ ``I``                              |
 +-------------------+--------------------------+--------------------------------------------------+
-| New window        |                          | ``Shift``\ +\ ``Ctrl``\ +\ ``I``                 |
+| New window        |                          | ``Ctrl``\ +\ ``Shift``\ +\ ``I``                 |
 +-------------------+--------------------------+--------------------------------------------------+
-| New Tab           |                          | ``Shift``\ +\ ``Ctrl``\ +\ ``T``                 |
+| New Tab           |                          | ``Ctrl``\ +\ ``Shift``\ +\ ``T``                 |
 +-------------------+--------------------------+--------------------------------------------------+
-| Split terminal    | Horizontally, Vertically | ``Shift``\ +\ ``Ctrl``\ +\ ``O``\ /\ ``E``       |
+| Split terminal    | Horizontally, Vertically | ``Ctrl``\ +\ ``Shift``\ +\ ``O``\ /\ ``E``       |
 +-------------------+--------------------------+--------------------------------------------------+
-| Hide window [#]_  |                          | ``Shift``\ +\ ``Ctrl``\ +\ ``Alt``\ +\ ``A``     |
+| Hide window [#]_  |                          | ``Ctrl``\ +\ ``Alt``\ +\ ``A``                   |
 +-------------------+--------------------------+--------------------------------------------------+
-| Close window      |                          | ``Shift``\ +\ ``Ctrl``\ +\ ``Q``                 |
+| Close window      |                          | ``Ctrl``\ +\ ``Shift``\ +\ ``Q``                 |
 +-------------------+--------------------------+--------------------------------------------------+
-| Close terminal    |                          | ``Shift``\ +\ ``Ctrl``\ +\ ``W``                 |
+| Close terminal    |                          | ``Ctrl``\ +\ ``Shift``\ +\ ``W``                 |
 +-------------------+--------------------------+--------------------------------------------------+
 | Toggle fullscreen |                          | ``F11``                                          |
 +-------------------+--------------------------+--------------------------------------------------+
-| Resize terminal   | Up, Down, Left, Right    | ``Shift``\ +\ ``Ctrl``\ +\ ``<Arrow>``           |
+| Resize terminal   | Up, Down, Left, Right    | ``Ctrl``\ +\ ``Shift``\ +\ ``<Arrow>``           |
 +-------------------+--------------------------+--------------------------------------------------+
-| Rotate terminals  | (Anti-)Clockwise         | (\ ``Shift``\ +\ )\ ``Super``\ +\ ``R``          |
+| Rotate terminals  | (Anti-)Clockwise         | \ ``Super``\ (+\ \ ``Shift``)\ +\ ``R``          |
 +-------------------+--------------------------+--------------------------------------------------+
-| Move Tab          | Left, Right              | ``Shift``\ +\ ``Ctrl``\ +\ ``PgUp``\ /\ ``PgDn`` |
+| Move Tab          | Left, Right              | ``Ctrl``\ +\ ``Shift``\ +\ ``PgUp``\ /\ ``PgDn`` |
 +-------------------+--------------------------+--------------------------------------------------+
-| Zoom terminal     |                          | ``Shift``\ +\ ``Ctrl``\ +\ ``Z``                 |
+| Zoom terminal     |                          | ``Ctrl``\ +\ ``Shift``\ +\ ``Z``                 |
 +-------------------+--------------------------+--------------------------------------------------+
-| Maximise terminal |                          | ``Shift``\ +\ ``Ctrl``\ +\ ``X``                 |
+| Maximise terminal |                          | ``Ctrl``\ +\ ``Shift``\ +\ ``X``                 |
 +-------------------+--------------------------+--------------------------------------------------+
 
 .. [#] This is a separate process. As such, drag and drop will not work
        to or from this new window, or subsequent windows launched using
-       the ``Shift``\ +\ ``Ctrl``\ +\ ``I`` while the focus is in the
+       the ``Ctrl``\ +\ ``Shift``\ +\ ``I`` while the focus is in the
        new instance.
 
 .. [#] Hide window will currently only work on the first window of the
@@ -422,6 +423,12 @@ layout:
        present it binds the shortcut globally (it has to, or it cannot
        unhide) and this can only be done once. This may change in
        future.
+
+^^^^^^^^^^^^^^^
+Dynamic layouts
+^^^^^^^^^^^^^^^ 
+
+Here the docs needs to be improved.
 
 -----------------------------------
 Resetting the terminal
@@ -433,10 +440,14 @@ starts to misbehave.
 +---------------+----------------------------------+
 | Action        | Default Shortcut                 |
 +===============+==================================+
-| Reset         | ``Shift``\ +\ ``Ctrl``\ +\ ``R`` |
+| Reset         | ``Ctrl``\ +\ ``Shift``\ +\ ``R`` |
 +---------------+----------------------------------+
-| Reset + Clear | ``Shift``\ +\ ``Ctrl``\ +\ ``G`` |
+| Reset + Clear | ``Ctrl``\ +\ ``Shift``\ +\ ``G`` |
 +---------------+----------------------------------+
+
+.. note:: Note that while *Reset* will only reset the current terminal
+          state, the command *Reset + Clear* will also clear the
+          terminal content, so be aware!
 
 -----------------------------------
 The scrollbar and scrollback buffer
@@ -452,7 +463,7 @@ scrollback buffer with more flexibility:
 +---------------------+----------+-------------------------------------+
 | Action              | Options  | Default Shortcut                    |
 +=====================+==========+=====================================+
-| Toggle scrollbar    |          | ``Shift``\ +\ ``Ctrl``\ +\ ``S``    |
+| Toggle scrollbar    |          | ``Ctrl``\ +\ ``Shift``\ +\ ``S``    |
 +---------------------+----------+-------------------------------------+
 | Page [VS]_          | Up, Down | ``Shift``\ +\ ``PgUp``\ /\ ``PgDn`` |
 +---------------------+----------+-------------------------------------+
@@ -485,7 +496,7 @@ a limitation that the found string is not highlighted.
 +--------------+----------------------------------+
 | Action       | Default Shortcut                 |
 +==============+==================================+
-| Begin search | ``Super``\ +\ ``Ctrl``\ +\ ``F`` |
+| Begin search | ``Ctrl``\ +\ ``Shift``\ +\ ``F`` |
 +--------------+----------------------------------+
 
 Resulting in a search bar at the bottom of the focused terminal:
@@ -499,10 +510,10 @@ well as an option to wrap the search around.
 
 .. note:: At this time there is no highlighting of the search string.
           This is a historical limitation due to the manner in which
-          the implmentation was originally done, way back when. I
-          intend to remove the old code, replacing with the built-in
-          libvte search function in the 2.1 release. This will then
-          highlight searched text.
+          the implmentation was originally done, way back when.
+          Removing the old code and replacing with the built-in
+          libvte search function would then highlight the text (Maybe
+          a good new issue).
 
 .. _zooming-the-terminal:
 
@@ -523,15 +534,15 @@ terminal.
 +------------------+------------------------------------------+
 | Target reset     | ``Ctrl``\ +\ ``0``                       |
 +------------------+------------------------------------------+
-| +Receivers in    | ``Shift``\ +\ ``Ctrl``\ +\ ``wheelup``   |
+| +Receivers in    | ``Ctrl``\ +\ ``Shift``\ +\ ``wheelup``   |
 +------------------+------------------------------------------+
-| +Receivers out   | ``Shift``\ +\ ``Ctrl``\ +\ ``wheeldown`` |
+| +Receivers out   | ``Ctrl``\ +\ ``Shift``\ +\ ``wheeldown`` |
 +------------------+------------------------------------------+
 | +Receivers reset | N/A (TBD, plus in/out)                   |
 +------------------+------------------------------------------+
-| All in           | ``Super``\ +\ ``Ctrl``\ +\ ``wheelup``   |
+| All in           | ``Ctrl``\ +\ ``Super``\ +\ ``wheelup``   |
 +------------------+------------------------------------------+
-| All out          | ``Super``\ +\ ``Ctrl``\ +\ ``wheeldown`` |
+| All out          | ``Ctrl``\ +\ ``Super``\ +\ ``wheeldown`` |
 +------------------+------------------------------------------+
 | All reset        | N/A (TBD, plus in/out)                   |
 +------------------+------------------------------------------+
@@ -555,7 +566,7 @@ In Terminator you can rename three things:
 +================+===========================+================================+
 | Window title   | N/A                       | ``Ctrl``\ +\ ``Alt``\ +\ ``W`` |
 +----------------+---------------------------+--------------------------------+
-| Tab title      | ``double-click`` tab      | ``Ctrl``\ +\ ``Alt``\ +\ ``A`` |
+| Tab title      | ``double-click`` tab      | N/A, TBD                       |
 +----------------+---------------------------+--------------------------------+
 | Terminal title | ``double-click`` titlebar | ``Ctrl``\ +\ ``Alt``\ +\ ``X`` |
 +----------------+---------------------------+--------------------------------+
@@ -570,7 +581,7 @@ or the window title can be set using a
 Insert terminal number
 -----------------------------------
 
-These shortcuts let you enumerate your terminals. It is handy if you
+These shortcuts let you enumerate your terminals. It can be handy if you
 need to login to a number of sequentially numbered machines. With
 multiple terminals the ordering may seem strange, but this is due to
 the nature of the splitting and the order in which the splits were

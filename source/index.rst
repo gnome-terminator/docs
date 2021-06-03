@@ -10,14 +10,14 @@ Sometimes it is not always
 clear just how many little shortcuts and features there are in Terminator. This
 manual hopes to reduce the confusion.
 
-A quick word on style. I have none. 😃 I have  casual way of talking and writing,
-and a strange sense of humour. I also tend to use random pop-culture references
-a lot, but often in ways that make no sense. If this is a problem you are
-entitled to a refund of the money you paid to me to write this... 😎
+.. A quick word on style. I have none. 😃 I have  casual way of talking and writing,
+.. and a strange sense of humour. I also tend to use random pop-culture references
+.. a lot, but often in ways that make no sense. If this is a problem you are
+.. entitled to a refund of the money you paid to me to write this... 😎
 
-------------------
-What is Terminator
-------------------
+-------------------
+What is Terminator?
+-------------------
 
 At its simplest Terminator is a terminal emulator like xterm, gnome-terminal,
 konsole, etc. At its most complex it lets you fly... metaphorically at least.
@@ -35,6 +35,7 @@ Take a look at the following list:
 - Save multiple layouts and profiles via GUI preferences editor
 - Simultaneous typing to arbitrary groups of terminals
 - Extensible through plugins
+- Dynamic and customizable layouts
 
 and lots more...
 
