@@ -440,7 +440,7 @@ Command
 
 
 ^^^^^^^
-Colors
+Colours
 ^^^^^^^
 
 .. image:: imgs/prefs_profiles_colors.png
@@ -455,29 +455,29 @@ Terminal.
 Foreground and Background
 """""""""""""""""""""""""""""""""""""""
 
-  **Use colors from system theme** (default: off)
+  **Use colours from system theme** (default: off)
 
-    Use colors as defined in the system theme. These are requested
+    Use colours as defined in the system theme. These are requested
     from the underlying VTE widget.
 
   **Built-in schemes** (default: Grey on black)
 
-    Pick a primary color combination for foreground and background.
+    Pick a primary colour combination for foreground and background.
     Again there are differences between Terminator and GNOME Terminal.
 
     The list for GNOME Terminal seems to be dynamic and vary depending
     on the system, with the addition of *Custom* which allows setting
-    the colors as desired. Terminator has a number of schemes hard
+    the colours as desired. Terminator has a number of schemes hard
     coded. (This may see improvement at some point.)
 
-  **Text color** (default: inactive, #AAAAAA)
+  **Text colour** (default: inactive, #AAAAAA)
 
-    If the *Built-in schemes* is set to *Custom* the text color can
+    If the *Built-in schemes* is set to *Custom* the text colour can
     be set here.
 
-  **Background color** (default: inactive, #000000)
+  **Background colour** (default: inactive, #000000)
 
-    If the *Built-in schemes* is set to *Custom* the background color
+    If the *Built-in schemes* is set to *Custom* the background colour
     can be set here.
 
 """""""""""""""""""""""""""""""""""""""
@@ -486,26 +486,26 @@ Palette
 
   **Built-in schemes** (default: Ambience)
 
-    A predefined color palette can be selected. The same text applies
+    A predefined colour palette can be selected. The same text applies
     as used for the *Built in schemes* option under *Foreground and
     Background* .
 
-  **Color palette** (default: inactive)
+  **Colour palette** (default: inactive)
 
     If the Palette's *Built-in schemes* is set to custom, a set of
-    color swatches are used to configure the 16 primary colors
+    colour swatches are used to configure the 16 primary colours
     of the shell palette.
 
 """""""""""""""""""""""""""""""""""""""
 Not in Terminator
 """""""""""""""""""""""""""""""""""""""
 
-  **Bold color**
+  **Bold colour**
 
     In theory nothing is stopping us implementing this, it just doesn't
     appear to have ever been added.
 
-  **Same as text color**
+  **Same as text colour**
 
     In truth, I'm not exactly sure what this does, but at a guess, the
     user can force bold to be drawn in the same colour as the
@@ -529,7 +529,7 @@ Background
 
 **Solid colour** (default: active)
 
-  Background of terminal is set to the solid color set in previous
+  Background of terminal is set to the solid colour set in previous
   *Colours* tab.
 
 **Transparent background** (default: inactive)
@@ -541,7 +541,7 @@ Background
 
 **Shade transparent background** (default: 0.5)
 
-  For *Transparent background* this is how much the solid color should
+  For *Transparent background* this is how much the solid colour should
   be blended in, giving a tinting effect.
 
 ^^^^^^^^^
