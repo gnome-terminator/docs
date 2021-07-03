@@ -176,6 +176,19 @@ values given, the notification may take 14.9 seconds to appear.
 .. note:: Bear in mind also that your notification may look very
           different to the image shown due to theming.
 
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Current Directory Open
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Original Author: Paweł Kotiuk
+
+.. image:: imgs/dir_open_plugin.jpg
+   :align: right
+
+Adds a menu item, **Open current directory**, to :ref:`context-menu` which
+will opens current directory in default file explorer.
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Launchpad Bug URL Handler
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
