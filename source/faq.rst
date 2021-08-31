@@ -318,3 +318,63 @@ out of view.
 
 .. warning:: The Hide on lose focus option is problematic at this
              time. You will probably find it very frustrating.
+
+...make the tabs shorter?
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can decrease the vertical padding using the following:
+
+.. code:: css
+
+       .terminator-terminal-window notebook tab {
+           padding: 0.1em;
+       }
+
+...make the active tab more distinctive?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can set the color of both the inactive and active tabs
+
+.. code:: css
+
+        .terminator-terminal-window notebook tab {
+            background-color: #222;
+        }
+
+        .terminator-terminal-window notebook tab:checked {
+            background-color: #000;
+        }
+
+You can also set a border around the active tab to make it stand out
+
+.. code:: css
+
+        notebook tab {
+            /* background-color: #222; */
+            padding: 0.4em;
+            border: 0;
+            border-color: #444;
+            border-style: solid;
+            border-width: 1px;
+        }
+        notebook tab:checked {
+            /* background-color: #000; */
+            border-color: #76C802;
+        }
+
+You can also change the text color of the tab label
+
+.. code:: css
+
+        notebook tab:checked label {
+            color: #76C802;
+            font-weight: 500;
+        }
+
+For more ideas, you can look at:
+https://www.preining.info/blog/2020/03/de-uglify-gtk3-tabs-of-terminals/
+
+or 
+
+http://blog.nabam.net/workstation/2017/09/15/terminator_tabs/
+
