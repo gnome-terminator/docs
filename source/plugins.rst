@@ -417,13 +417,13 @@ any additional files) in one of two locations:
 Creating your own plugins
 ------------------------------
 
-.. note:: The following guide is initially sourced from a `tutorial`_
-          written by Chris Jones back in April 2010. I'm reproducing
-          it here as a precaution, although I don't expect the
-          original will disappear. It will get rewritten and expanded
-          as more knowledge and information is added.
+.. note:: The following guide was initially sourced from a now archived
+          `tutorial`_ written by Chris Jones back in April 2010. I'm
+          reproducing it here as a precaution, although I don't expect
+          the archived original will disappear. It will get rewritten
+          and expanded as more knowledge and information is added.
 
-.. _tutorial: http://www.tenshu.net/2010/04/writing-terminator-plugins.html
+.. _tutorial: http://cmsj.net/2010/04/18/writing-terminator-plugins.html
 
 One of the features of the new 0.9x series of Terminator releases
 that hasn't had a huge amount of announcement/discussion yet is the
