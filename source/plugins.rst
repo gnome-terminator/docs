@@ -328,75 +328,103 @@ Answers on a postcard...
 
 In absolutely no order at all...
 
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Editor / Command
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 https://github.com/rail/dotfiles/blob/master/terminator_bugzilla_handler.py
   - terminator_bugzilla_handler: Link "bug:12345" to the Mozilla bugzilla.
     (As it is for Mozilla, it seems a bit misnamed.)
 
-https://github.com/ilgarm/terminator_plugins
-  - clone_session: Split and clone ssh session
-
 https://github.com/arnaudh/terminator-plugins
   - open_any_file_plugin: Open any file with it's default application
 
-https://github.com/dr1s/terminator-plugins
-  - cluster_connect: A way to connect to multiple machines as a cluster
-
 https://github.com/mchelem/terminator-editor-plugin
   - editor_plugin: Click on file\:line style links to launch a text editor
+
+https://github.com/papajoker/editor_terminator
+  - editor_plugin: Another text editor launcher
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Session / Layout
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+https://github.com/ilgarm/terminator_plugins
+  - clone_session: Split and clone ssh session
 
 https://github.com/camillo/TerminatorPlugins
   - LayoutManager: Saves and restores Layouts (which is built-in now, possibly redundant)
   - TerminalExporter: Export contents to file
 
-https://github.com/choffee/terminator-plugins
-  - searchplugin: Search Google for the selected text in a terminal
-
-https://github.com/papajoker/editor_terminator
-  - editor_plugin: Another text editor launcher
-
-https://github.com/papajoker/git_terminator
-  - git_plugin: adds commands for git when it detects a .git folder
-
-https://github.com/iambibhas/terminator-plugins
-  - hastebin: Uploads selected text to Hastebin and opens browser on it
-
 https://github.com/abourget/abourget-terminator
   - TenscoresPlugin: Seems to be for launching set of tabs (which is built-in now, possibly redundant)
-
-https://github.com/mikeadkison/terminator-google
-  - google: Another google-the-text plugin
-
-https://github.com/mariolameiras/ssh-menu-terminator
-  - ssh_menu: I'm guessing a bit, but I think it works with SSH Menu ;-) the code is quite big to understand at a glance.
 
 https://github.com/alesegdia/terminator-plugins
   - Session: Save/load sessions (which is built-in now, possibly redundant)
 
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Display / Theme
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 https://github.com/Theer108/colorize
   - colorize: Colour titlebar of each terminal separately
 
-https://github.com/ju1ius/clisnips
-  - clisnips: Snippets for the command line.
-
 https://github.com/GratefulTony/TerminatorHostWatch
   - hostWatch: Attempts to figure out your current host, and apply a certain theme.
-
-https://github.com/kmoppel/dumptofile
-  - dump_to_file: Dump console contents to a text file.
 
 https://bitbucket.org/pgularski/terminator-plugins
   - show_titlebar: Menu item to show/hide the titlebar.
   - searchplugin: Yup, another Googler.
 
-https://bitbucket.org/johnsanchezc/terminator-applauncher
-  - applauncher: A launcher/set-up tool (which is built-in now, possibly redundant)
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Logging / Dump
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+https://github.com/kmoppel/dumptofile
+  - dump_to_file: Dump console contents to a text file.
 
 https://www.snip2code.com/Snippet/58595/Terminator-plugin----log-the-output-of-t
   - my_logger: Log the output to a file with a time-stamp as the name, and prefix each line with the time.
     (Seems to be similar to, or derived from, the included one)
 
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Other
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+https://github.com/choffee/terminator-plugins
+  - searchplugin: Search Google for the selected text in a terminal
+
+https://github.com/mikeadkison/terminator-google
+  - google: Another google-the-text plugin
+
+https://github.com/iambibhas/terminator-plugins
+  - hastebin: Uploads selected text to Hastebin and opens browser on it
+
+https://github.com/papajoker/git_terminator
+  - git_plugin: adds commands for git when it detects a .git folder
+
+
+https://github.com/dr1s/terminator-plugins
+  - cluster_connect: A way to connect to multiple machines as a cluster
+
+https://github.com/mariolameiras/ssh-menu-terminator
+  - ssh_menu: I'm guessing a bit, but I think it works with SSH Menu ;-) the code is quite big to understand at a glance.
+
+https://github.com/ju1ius/clisnips
+  - clisnips: Snippets for the command line.
+
+https://bitbucket.org/johnsanchezc/terminator-applauncher
+  - applauncher: A launcher/set-up tool (which is built-in now, possibly redundant)
+
 https://github.com/OlivierBoucher/terminator-k8s-plugin
   - k8s: NEW! Work in progress, with the ultimate goal to provide k8s specific informations in the shell title bar.
+
 
 ------------------------------
 Installing a plugin
