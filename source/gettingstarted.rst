@@ -48,8 +48,7 @@ the two primary menus showing:
    will let you access all the settings, profiles, shortcuts and 
    configurations. However, it is kept brief to avoid the mega-menus that
    sometimes grow unchecked.
-   In case you have enabled the ``PuTTY style paste`` from the **Preferences**, 
-   you can use ``shift``\ +\ ``F10`` to access the `context-menu`.
+   You can use ``shift``\ +\ ``F10`` to access the `context-menu`.
 #. :ref:`grouping-menu` - 
    This is reached with a ``left-click`` on the trio of coloured boxes in the
    titlebar. Later, when we cover Grouping and broadcasting to multiple
