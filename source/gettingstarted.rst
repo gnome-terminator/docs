@@ -66,7 +66,7 @@ the two primary menus showing:
 The Context Menu
 ----------------
 
-The context menu is split into five parts. The first part is the standard
+The context menu is split into six parts. The first part is the standard
 Copy and Paste for text that has been highlighted with the mouse. The 
 shortcuts are:
 
