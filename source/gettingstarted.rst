@@ -509,13 +509,6 @@ Resulting in a search bar at the bottom of the focused terminal:
 This has buttons for moving back and forward through the results, as
 well as an option to wrap the search around.
 
-.. note:: At this time there is no highlighting of the search string.
-          This is a historical limitation due to the manner in which
-          the implmentation was originally done, way back when.
-          Removing the old code and replacing with the built-in
-          libvte search function would then highlight the text (Maybe
-          a good new issue).
-
 .. _zooming-the-terminal:
 
 -----------------------------------
