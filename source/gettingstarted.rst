@@ -492,8 +492,7 @@ scrollback buffer with more flexibility:
 Search the buffer
 -----------------------------------
 
-It is possible to search the buffer, although at this time there is
-a limitation that the found string is not highlighted.
+It is possible to search the buffer. The found string will be highlighted.
 
 +--------------+----------------------------------+
 | Action       | Default Shortcut                 |
