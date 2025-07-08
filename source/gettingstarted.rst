@@ -121,11 +121,9 @@ current task, or even when giving presentations or training. **Maximise
 terminal** is almost identical, except that it does not increase the size of
 the terminal font.
 
-When you are zoomed or maximised it is not possible to split terminals,
-or create new tabs, so the entries for those actions disappear from
-the menu. So too do the zoom and maximise options, and in their place is
-a **Restore all terminals** entry. This will take you back to your windows
-original layout, and restore the font size if necessary.
+When a terminal is zoomed or maximised the zoom and maximise options disappear,
+and in their place isa **Restore all terminals** entry. This will take you back
+to your windows original layout, and restore the font size if necessary.
 
 .. warning:: An outstanding issue is that sometimes the font size
              selected when zooming in can be a bit extreme. You can use
