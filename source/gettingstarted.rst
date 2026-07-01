@@ -172,9 +172,9 @@ of shortcuts that will move the focus around:
 
 Once the Context menu is visible, it can be navigated with the arrow keys.
 
-..
- .. note:: For me the two different sets of next/prev shortcuts are a bit of a
-           mystery. Something to look into.
+
+.. note:: For me the two different sets of next/prev shortcuts are a bit of a
+          mystery. Something to look into.
 
 .. _clickable-items:
 
