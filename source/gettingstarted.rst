@@ -29,8 +29,8 @@ similar. It may in fact look a little too minimal to some of you, but
 this is a deliberate policy. Keep the focus on the terminal, not on a
 cluttered interface. This is why we don't waste space on a traditional
 menu bar and toolbar. Even the terminal scrollbar and titlebar (the
-red strip on the top) can be turned off, although you may lose |br|
-ease-of-access to some of Terminators more powerful features then.
+red strip on the top) can be turned off, although you may lose
+ease‑of‑access to some of Terminators more powerful features then.
 
 Many functions are triggered with keyboard shortcuts. But mousers aren't
 completely abandoned. Lets look again at the basic interface, but with
