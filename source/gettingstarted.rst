@@ -66,9 +66,9 @@ the two primary menus showing:
 The Context Menu
 ----------------
 
-The context menu is split into six parts. The first part is the standard
-Copy and Paste for text that has been highlighted with the mouse. The 
-shortcuts are:
+The context menu is split into five parts (six if plugins with menus are
+enabled). The first part is the standard Copy and Paste for text that has been
+highlighted with the mouse. The shortcuts are:
 
 +--------+----------------------------------+
 | Action | Default Shortcut                 |
