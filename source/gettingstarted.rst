@@ -122,7 +122,7 @@ terminal** is almost identical, except that it does not increase the size of
 the terminal font.
 
 When a terminal is zoomed or maximised the zoom and maximise options disappear,
-and in their place isa **Restore all terminals** entry. This will take you back
+and in their place is a **Restore all terminals** entry. This will take you back
 to your windows original layout, and restore the font size if necessary.
 
 .. warning:: An outstanding issue is that sometimes the font size
