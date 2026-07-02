@@ -29,8 +29,8 @@ similar. It may in fact look a little too minimal to some of you, but
 this is a deliberate policy. Keep the focus on the terminal, not on a
 cluttered interface. This is why we don't waste space on a traditional
 menu bar and toolbar. Even the terminal scrollbar and titlebar (the
-red strip on the top) can be turned off, although you may lose |br|
-ease-of-access to some of Terminators more powerful features then.
+red strip on the top) can be turned off, although you may lose
+ease‑of‑access to some of Terminators more powerful features then.
 
 Many functions are triggered with keyboard shortcuts. But mousers aren't
 completely abandoned. Lets look again at the basic interface, but with
@@ -66,9 +66,9 @@ the two primary menus showing:
 The Context Menu
 ----------------
 
-The context menu is split into six parts. The first part is the standard
-Copy and Paste for text that has been highlighted with the mouse. The 
-shortcuts are:
+The context menu is split into five parts (six if plugins with menus are
+enabled). The first part is the standard Copy and Paste for text that has been
+highlighted with the mouse. The shortcuts are:
 
 +--------+----------------------------------+
 | Action | Default Shortcut                 |
@@ -122,7 +122,7 @@ terminal** is almost identical, except that it does not increase the size of
 the terminal font.
 
 When a terminal is zoomed or maximised the zoom and maximise options disappear,
-and in their place isa **Restore all terminals** entry. This will take you back
+and in their place is a **Restore all terminals** entry. This will take you back
 to your windows original layout, and restore the font size if necessary.
 
 .. warning:: An outstanding issue is that sometimes the font size
@@ -150,31 +150,31 @@ Navigating around
 Apart from the obvious of clicking the terminal for focus, there are a number
 of shortcuts that will move the focus around:
 
-+-------------------+-----------------------+----------------------------------------------+
-| Action            | Options               | Default Shortcut                             |
-+===================+=======================+==============================================+
-| Move focus        | Up, Down, Left, Right | ``Alt``\ +\ ``<Arrow>``                      |
-+-------------------+-----------------------+----------------------------------------------+
-| Cycle to terminal | Next, Prev            | ``Ctrl``\+\ ``Tab`` or ``Shift``\+\ ``Tab``  |
-+-------------------+-----------------------+----------------------------------------------+
-| Focus to terminal | Next, Prev            | ``Ctrl``\ +\ ``Shift``\ +\ ``N``\ /\ ``P``   |
-+-------------------+-----------------------+----------------------------------------------+
-| Switch to tab #   | 1 to 10               |                                              |
-+-------------------+-----------------------+----------------------------------------------+
-| Switch tab        | Previous, Next        | ``Ctrl``\ +\ ``PgUp``\ /\ ``PgDn``           |
-+-------------------+-----------------------+----------------------------------------------+
-| Context menu      |                       | ``Menu Key``                                 |
-+-------------------+-----------------------+----------------------------------------------+
-| Help [#]_         |                       | ``F1``                                       |
-+-------------------+-----------------------+----------------------------------------------+
++-------------------+-----------------------+-------------------------------------------------------------+
+| Action            | Options               | Default Shortcut                                            |
++===================+=======================+=============================================================+
+| Move focus        | Up, Down, Left, Right | ``Alt``\ +\ ``<Arrow>``                                     |
++-------------------+-----------------------+-------------------------------------------------------------+
+| Cycle to terminal | Next, Prev            | ``Ctrl``\ +\ ``Tab`` or ``Ctrl``\ +\ ``Shift``\ +\ ``Tab``  |
++-------------------+-----------------------+-------------------------------------------------------------+
+| Focus to terminal | Next, Prev            | ``Ctrl``\ +\ ``Shift``\ +\ ``N``\ /\ ``P``                  |
++-------------------+-----------------------+-------------------------------------------------------------+
+| Switch to tab #   | 1 to 10               |                                                             |
++-------------------+-----------------------+-------------------------------------------------------------+
+| Switch tab        | Previous, Next        | ``Ctrl``\ +\ ``PgUp``\ /\ ``PgDn``                          |
++-------------------+-----------------------+-------------------------------------------------------------+
+| Context menu      |                       | ``Menu Key``                                                |
++-------------------+-----------------------+-------------------------------------------------------------+
+| Help [#]_         |                       | ``F1``                                                      |
++-------------------+-----------------------+-------------------------------------------------------------+
 
 .. [#] Although as you're reading this, I guess you figured that one out!
 
 Once the Context menu is visible, it can be navigated with the arrow keys.
 
-..
- .. note:: For me the two different sets of next/prev shortcuts are a bit of a
-           mystery. Something to look into.
+
+.. note:: For me the two different sets of next/prev shortcuts are a bit of a
+          mystery. Something to look into.
 
 .. _clickable-items:
 
