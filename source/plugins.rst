@@ -290,6 +290,31 @@ that will take a screenshot of the underlying terminal, and present
 a dialog for where to save it.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Save Last Session
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Original Author: Vishweshwar Saran Singh Deo
+
+Does what it says, Saves the last layout settings on user logout,
+restart, shutdown or when last window is closed. Later the layout can
+be restored from (Right Click) -> Layouts -> SaveLastLayoutSession.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mouse Free URL Handler
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Original Author: Vishweshwar Saran Singh Deo
+
+Uses the Short Cut Key Binding feature to enable users to select URL's
+using keyborad shortcuts and open links. Default Keybindings
+  - Find Next URL: ``Alt``\ +\ ``j``
+  - Find Prev URL: ``Alt``\ +\ ``k``
+  - Open URL     : ``Alt``\ +\ ``Enter``
+  - Stop Search  : ``Esc``
+
+Keybindings can be later changed in Preferences -> keybindings
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Test Plugin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
